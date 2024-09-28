@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocDocs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c934025361d8d8f22e8c6e1197871c3bd9e2f72")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4339862770c6d1a5ae2a46b285927c146bba307c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocDocs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocDocs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
