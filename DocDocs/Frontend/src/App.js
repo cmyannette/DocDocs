@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import './components/Meeting/meetingPage';
 
 function App() {
   // State to track if user is logged in
