@@ -1,20 +1,87 @@
-.App {
-  display: flex;
+/* General Background and Text Colors */
+body {
+  background-color: #f9f9ff;
+  color: #4b0082;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #6a0dad;
+}
+
+a {
+  color: #8a2be2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7b26c6;
+}
+
+/* Sidebar */
 .sidebar {
   width: 250px;
-  background-color: #2c3e50;
+  background-color: #6a0dad;
   color: white;
-  padding: 20px;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
 }
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+.login-form {
+  width: 300px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #1a2533;
+}
+
+.login-form p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-form p a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.login-form p a:hover {
+  text-decoration: underline;
+}
 .sidebar h2 {
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .sidebar ul {
@@ -31,9 +98,28 @@
   text-decoration: none;
 }
 
+.sidebar ul li a:hover {
+  color: #d1b3ff;
+}
+
+.logout-btn {
+  background-color: #8a2be2;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.logout-btn:hover {
+  background-color: #6a0dad;
+}
+
+/* Main Content */
 .main-content {
-  margin-left: 270px; /* More space between sidebar and main content */
-  padding: 40px; /* Increase padding for better spacing */
+  margin-left: 270px;
+  padding: 40px;
   width: calc(100% - 270px);
 }
 
@@ -43,9 +129,10 @@
 
 .main-content h2 {
   margin-bottom: 10px;
-  text-decoration: underline; /* Underline headings */
+  text-decoration: underline;
 }
 
 .main-content p {
   font-size: 18px;
 }
+
