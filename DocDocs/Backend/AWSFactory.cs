@@ -5,6 +5,7 @@ using Amazon.S3;
 using Amazon.S3.Transfer;
 using Amazon.S3.Model;
 using System.Configuration;
+using DotNetEnv;
 
 public static class AWSFactory
 {
@@ -14,8 +15,9 @@ public static class AWSFactory
 
     public static async Task UploadFileAsync()
     {
-        string accessKey = "AKIAYINTLKSUY63B2NUM";
-        string secretKey = "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";
+        Env.Load();
+        string accessKey = Env.GetString("AWS_ACCESS_KEY");
+        string secretKey = Env.GetString("AWS_SECRET_ACCESS_KEY");
 
         var s3Client = new AmazonS3Client(accessKey, secretKey, bucketRegion);
         try
