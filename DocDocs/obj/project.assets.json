@@ -2,6 +2,51 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AWSSDK.Core/3.7.400.26": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.S3/3.7.403.5": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.400.26, 4.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.TranscribeService/3.7.400.26": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.400.26, 4.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.TranscribeService.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.TranscribeService.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/8.0.8": {
         "type": "package",
         "dependencies": {
@@ -111,6 +156,99 @@
     }
   },
   "libraries": {
+    "AWSSDK.Core/3.7.400.26": {
+      "sha512": "6XcQjkfKMwG8z4FOPJ8N0vbq1PVCIneK4wEj+b4l8461XwCcHmQig9/2XmoNkdzFKDSDptBsBmaO2UgaroNuag==",
+      "type": "package",
+      "path": "awssdk.core/3.7.400.26",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.3.7.400.26.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "images/AWSLogo.png",
+        "lib/net35/AWSSDK.Core.dll",
+        "lib/net35/AWSSDK.Core.pdb",
+        "lib/net35/AWSSDK.Core.xml",
+        "lib/net45/AWSSDK.Core.dll",
+        "lib/net45/AWSSDK.Core.pdb",
+        "lib/net45/AWSSDK.Core.xml",
+        "lib/net8.0/AWSSDK.Core.dll",
+        "lib/net8.0/AWSSDK.Core.pdb",
+        "lib/net8.0/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.pdb",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.S3/3.7.403.5": {
+      "sha512": "WUfAMuN5pBWfX3leaCEqRXCqVCXxfFb/CAo8Nd79pAfFXNAprVCGhNWnxuNH+vhvpj9ur8a5DHQgZeLUQ5G/Xw==",
+      "type": "package",
+      "path": "awssdk.s3/3.7.403.5",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.S3.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.s3.3.7.403.5.nupkg.sha512",
+        "awssdk.s3.nuspec",
+        "images/AWSLogo.png",
+        "lib/net35/AWSSDK.S3.dll",
+        "lib/net35/AWSSDK.S3.pdb",
+        "lib/net35/AWSSDK.S3.xml",
+        "lib/net45/AWSSDK.S3.dll",
+        "lib/net45/AWSSDK.S3.pdb",
+        "lib/net45/AWSSDK.S3.xml",
+        "lib/net8.0/AWSSDK.S3.dll",
+        "lib/net8.0/AWSSDK.S3.pdb",
+        "lib/net8.0/AWSSDK.S3.xml",
+        "lib/netcoreapp3.1/AWSSDK.S3.dll",
+        "lib/netcoreapp3.1/AWSSDK.S3.pdb",
+        "lib/netcoreapp3.1/AWSSDK.S3.xml",
+        "lib/netstandard2.0/AWSSDK.S3.dll",
+        "lib/netstandard2.0/AWSSDK.S3.pdb",
+        "lib/netstandard2.0/AWSSDK.S3.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.TranscribeService/3.7.400.26": {
+      "sha512": "YZi5Xwg0NQgLQ0O9KgXiOq6KG3xCfaQjry9SVXQYBmqVjD6DU9thV4IYdWPKlx1x4WdvcxjZirk//QY7GEjtxQ==",
+      "type": "package",
+      "path": "awssdk.transcribeservice/3.7.400.26",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.TranscribeService.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.transcribeservice.3.7.400.26.nupkg.sha512",
+        "awssdk.transcribeservice.nuspec",
+        "images/AWSLogo.png",
+        "lib/net35/AWSSDK.TranscribeService.dll",
+        "lib/net35/AWSSDK.TranscribeService.pdb",
+        "lib/net35/AWSSDK.TranscribeService.xml",
+        "lib/net45/AWSSDK.TranscribeService.dll",
+        "lib/net45/AWSSDK.TranscribeService.pdb",
+        "lib/net45/AWSSDK.TranscribeService.xml",
+        "lib/net8.0/AWSSDK.TranscribeService.dll",
+        "lib/net8.0/AWSSDK.TranscribeService.pdb",
+        "lib/net8.0/AWSSDK.TranscribeService.xml",
+        "lib/netcoreapp3.1/AWSSDK.TranscribeService.dll",
+        "lib/netcoreapp3.1/AWSSDK.TranscribeService.pdb",
+        "lib/netcoreapp3.1/AWSSDK.TranscribeService.xml",
+        "lib/netstandard2.0/AWSSDK.TranscribeService.dll",
+        "lib/netstandard2.0/AWSSDK.TranscribeService.pdb",
+        "lib/netstandard2.0/AWSSDK.TranscribeService.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "Microsoft.AspNetCore.OpenApi/8.0.8": {
       "sha512": "wNHhohqP8rmsQ4UhKbd6jZMD6l+2Q/+DvRBT0Cgqeuglr13aF6sSJWicZKCIhZAUXzuhkdwtHVc95MlPlFk0dA==",
       "type": "package",
@@ -455,24 +593,26 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AWSSDK.S3 >= 3.7.403.5",
+      "AWSSDK.TranscribeService >= 3.7.400.26",
       "Microsoft.AspNetCore.OpenApi >= 8.0.8",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
   "packageFolders": {
-    "/Users/thomaswaller/.nuget/packages/": {}
+    "C:\\Users\\Loc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/thomaswaller/HackMidwest/DocDocs/DocDocs.csproj",
+      "projectUniqueName": "C:\\Users\\Loc\\Desktop\\Hack Midwest 2024\\HackMidwest\\DocDocs\\DocDocs.csproj",
       "projectName": "DocDocs",
-      "projectPath": "/Users/thomaswaller/HackMidwest/DocDocs/DocDocs.csproj",
-      "packagesPath": "/Users/thomaswaller/.nuget/packages/",
-      "outputPath": "/Users/thomaswaller/HackMidwest/DocDocs/obj/",
+      "projectPath": "C:\\Users\\Loc\\Desktop\\Hack Midwest 2024\\HackMidwest\\DocDocs\\DocDocs.csproj",
+      "packagesPath": "C:\\Users\\Loc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Loc\\Desktop\\Hack Midwest 2024\\HackMidwest\\DocDocs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/thomaswaller/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Loc\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -501,6 +641,14 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "AWSSDK.S3": {
+            "target": "Package",
+            "version": "[3.7.403.5, )"
+          },
+          "AWSSDK.TranscribeService": {
+            "target": "Package",
+            "version": "[3.7.400.26, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[8.0.8, )"
@@ -529,7 +677,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
