@@ -14,11 +14,11 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 ## Who's on your team?
 *List the full names,  email address & Github username of your teammates*
 
-1.   **Full Name**  || **fullname@company.com**  (or fullname@school.edu if you're a CS student) || **Github Username**
-2. 
-3.
-4.
-5.
+1. Loc Nguyen  || lnguyen72@huskers.unl.edu || locnugwin
+2. Thomas Waller  || twaller9@huskers.unl.edu || twaller9
+3. Caleb Hans  || chans3@huskers.unl.edu || caleb-hansolo
+4. Carter Yannette  || cyannette2@huskers.unl.edu || cmyannette
+5. Mayank Sharma  || msharma6@huskers.unl.edu || its-me-Mayank
 
 <br /><br />
 
