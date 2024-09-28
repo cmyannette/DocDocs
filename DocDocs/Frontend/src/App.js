@@ -19,15 +19,24 @@ function App() {
   return (
     <div className="App">
       {!isLoggedIn ? (
-        <div className="login-page">
-          <div className="login-form">
-            <h2>Login</h2>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
-            <button onClick={handleLogin}>Login</button>
-            <p><a href="#">Forgot Password?</a></p>
+        <>
+          {/* Glassmorphism Login Page */}
+          <div className="background">
+            <div className="shape"></div>
+            <div className="shape"></div>
           </div>
-        </div>
+          <form className="glass-form">
+            <h3>Welcome to DocDocs! Please Login Here</h3>
+
+            <label htmlFor="username">Username</label>
+            <input type="text" placeholder="Username" id="username" />
+
+            <label htmlFor="password">Password</label>
+            <input type="password" placeholder="Password" id="password" />
+
+            <button type="button" onClick={handleLogin}>Log In</button>
+          </form>
+        </>
       ) : (
         <>
           <div className="sidebar">
@@ -39,7 +48,7 @@ function App() {
               <li><a href="#meetings">Meetings</a></li>
               <li><a href="#notes">Notes</a></li>
             </ul>
-            <button className="logout-btn">Logout</button>
+            <button className="logout-btn" onClick={() => setIsLoggedIn(false)}>Logout</button>
           </div>
           <div className="main-content">
             <section id="meetings">
