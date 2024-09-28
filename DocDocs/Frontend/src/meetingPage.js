@@ -1,5 +1,5 @@
 import React from 'react';
-import './MeetingPage.css';
+import './meetingPage.css';
 
 function MeetingPage() {
   return (

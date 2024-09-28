@@ -12,10 +12,9 @@ function App() {
 
   const meetings = 2;
 
-  // Handle login
   const handleLogin = () => {
     setIsLoggedIn(true);
-  };
+  }
 
   return (
     <div className="App">
