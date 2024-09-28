@@ -2,18 +2,28 @@
 <html>
 <head>
     <title>Login Page</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <h1>Welcome to DocDocs</h1>
-    
-    <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <input type="submit" value="Login">
-    </form>
+    <div class="login-page">
+        <div class="login-form">
+            <h1>Welcome to DocDocs</h1>
+            <form>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit">Login</button>
+                
+                <p>Forgot your password? <a href="#">Reset it here</a></p>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
