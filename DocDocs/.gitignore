@@ -1,9 +1,9 @@
 # Node.js dependencies
-/node_modules
+/node_modules/
 
 # Build output
-/build
-/dist
+/build/
+/dist/
 
 # Log files
 npm-debug.log*
@@ -11,27 +11,26 @@ yarn-debug.log*
 yarn-error.log*
 
 # Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+/.env
+/.env.local
+/.env.development.local
+/.env.test.local
+/.env.production.local
 
 # IDE-specific files
-.vscode/
-.idea/
+/.vscode/
+/.idea/
 
 # OS-specific files
-.DS_Store
-Thumbs.db
+/.DS_Store
+/Thumbs.db
 
-DocDocs.GeneratedMSBuildEditorConfig.editorconfig
-# user specific folders:
-/obj
-/bin
+# Specific files
+/DocDocs.GeneratedMSBuildEditorConfig.editorconfig
+/DocDocs.AssemblyInfo.cs
+
+# User specific folders:
+/obj/
+/bin/
 
 /Properties/launchSettings.json
-
-
-
-DocDocs.AssemblyInfo.cs
