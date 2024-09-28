@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
 import './App.css';
 import Login from './components/Login/Login.js';
-import MeetingPage from './components/Meeting/meetingPage';
+import MeetingPage from './components/Meeting/MeetingPage'; // Import the MeetingPage
 
 function App() {
-  // State to track if user is logged in
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [meetingInProgress, setMeetingInProgress] = useState(false);
 
   const patient = {
     name: 'John Doe',
-    pfp: 'https://via.placeholder.com/150' // Replace with actual photo URL
+    pfp: 'https://via.placeholder.com/150', // Replace with actual photo URL
   };
 
   const meetings = 2;
 
   const handleLogin = () => {
     setIsLoggedIn(true);
+  };
+
+  const handleJoinMeeting = () => {
+    setMeetingInProgress(true);
+  };
+
+  const handleMeetingEnd = () => {
+    setMeetingInProgress(false); // Reset the meeting state
   };
 
   return (
@@ -35,16 +43,12 @@ function App() {
             </ul>
             <button className="logout-btn" onClick={() => setIsLoggedIn(false)}>Logout</button>
           </div>
-          <div className="main-content">
-            <section id="meetings">
-              <h2>Meetings</h2>
-              <p>Hello {patient.name}. You have {meetings > 0 ? meetings : 'no'} upcoming meetings.</p>
-            </section>
-            <section id="notes">
-              <h2>Notes</h2>
-              <p>Here are your notes...</p>
-            </section>
-          </div>
+          <MeetingPage
+            patient={patient}
+            meetings={meetings}
+            onJoinMeeting={handleJoinMeeting}
+            onEndMeeting={handleMeetingEnd}
+          />
         </>
       )}
     </div>
