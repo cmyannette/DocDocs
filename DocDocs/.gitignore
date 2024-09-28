@@ -30,5 +30,8 @@ DocDocs.GeneratedMSBuildEditorConfig.editorconfig
 /obj
 /bin
 
+/Properties/launchSettings.json
+
+
 
 DocDocs.AssemblyInfo.cs
