@@ -1,54 +1,61 @@
 import React, { useState } from 'react';
 import './App.css';
-import patientImage from './assets/Test.png'; // Add a patient image in the public folder
 
 function App() {
-  const patientName = "John Doe";
-  const upcomingMeetings = 3; // Change to 0 if no meetings
+  // State to track if user is logged in
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const patient = {
+    name: 'John Doe',
+    pfp: 'https://via.placeholder.com/150' // Replace with actual photo URL
+  };
+
+  const meetings = 2;
+
+  // Handle login
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
 
   return (
     <div className="App">
-      <Sidebar patientName={patientName} />
-      <MainContent patientName={patientName} upcomingMeetings={upcomingMeetings} />
+      {!isLoggedIn ? (
+        <div className="login-page">
+          <div className="login-form">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <button onClick={handleLogin}>Login</button>
+            <p><a href="#">Forgot Password?</a></p>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="sidebar">
+            <div className="profile">
+              <img src={patient.pfp} alt="Patient Profile" />
+              <div className="username">{patient.name}</div>
+            </div>
+            <ul>
+              <li><a href="#meetings">Meetings</a></li>
+              <li><a href="#notes">Notes</a></li>
+            </ul>
+            <button className="logout-btn">Logout</button>
+          </div>
+          <div className="main-content">
+            <section id="meetings">
+              <h2>Meetings</h2>
+              <p>Hello {patient.name}. You have {meetings > 0 ? meetings : 'no'} upcoming meetings.</p>
+            </section>
+            <section id="notes">
+              <h2>Notes</h2>
+              <p>Here are your notes...</p>
+            </section>
+          </div>
+        </>
+      )}
     </div>
   );
 }
-
-const Sidebar = ({ patientName }) => {
-  return (
-    <div className="sidebar">
-      <div className="patient-info">
-        <img src={patientImage} alt="Patient Profile" className="patient-pfp" />
-        <h2>{patientName}</h2>
-      </div>
-      <ul>
-        <li><a href="#meetings">Meetings</a></li>
-        <li><a href="#notes">Notes</a></li>
-      </ul>
-      <button className="btn logout-btn">Logout</button>
-    </div>
-  );
-};
-
-const MainContent = ({ patientName, upcomingMeetings }) => {
-  return (
-    <div className="main-content">
-      <section id="welcome-message" className="card">
-        <h2>Hello {patientName}</h2>
-        <p>
-          You have {upcomingMeetings > 0 ? `${upcomingMeetings} upcoming meetings` : "no upcoming meetings"}.
-        </p>
-      </section>
-      <section id="meetings" className="card">
-        <h2>Meetings</h2>
-        <p>Here are your upcoming meetings...</p>
-      </section>
-      <section id="notes" className="card">
-        <h2>Notes</h2>
-        <p>Here are your notes...</p>
-      </section>
-    </div>
-  );
-};
 
 export default App;

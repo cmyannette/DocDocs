@@ -5,6 +5,8 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden; /* Prevent scroll */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,19 +24,112 @@ a:hover {
 
 /* Sidebar */
 .sidebar {
-  width: 250px;
+  width: 200px;
   background-color: #6a0dad;
   color: white;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 10px;
 }
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Profile section in sidebar */
+.sidebar .profile {
+  text-align: center;
+}
+
+.sidebar .profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.sidebar .profile .username {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Sidebar links */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #7b26c6;
+  border-radius: 5px;
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #8a2be2;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.logout-btn:hover {
+  background-color: #6a0dad;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 220px;
+  padding: 40px;
+  width: calc(100% - 220px);
+  height: 100vh;
+  overflow-y: auto; /* Scroll if content exceeds the page */
+}
+
+.main-content section {
+  margin-bottom: 30px;
+}
+
+.main-content h2 {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.main-content p {
+  font-size: 18px;
+}
+
+/* Login Page */
 .login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #f9f9ff;
 }
 
 .login-form {
@@ -42,6 +137,7 @@ a:hover {
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .login-form input {
@@ -79,60 +175,30 @@ a:hover {
 .login-form p a:hover {
   text-decoration: underline;
 }
-.sidebar h2 {
-  margin-bottom: 20px;
-  font-size: 18px;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 150px;
+  }
+  
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  
+  .main-content {
+    margin-left: 170px;
+    width: calc(100% - 170px);
+  }
 }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100px;
+  }
+  
+  .main-content {
+    margin-left: 110px;
+    width: calc(100% - 110px);
+  }
 }
-
-.sidebar ul li {
-  margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-  color: #d1b3ff;
-}
-
-.logout-btn {
-  background-color: #8a2be2;
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  align-self: flex-start;
-}
-
-.logout-btn:hover {
-  background-color: #6a0dad;
-}
-
-/* Main Content */
-.main-content {
-  margin-left: 270px;
-  padding: 40px;
-  width: calc(100% - 270px);
-}
-
-.main-content section {
-  margin-bottom: 30px;
-}
-
-.main-content h2 {
-  margin-bottom: 10px;
-  text-decoration: underline;
-}
-
-.main-content p {
-  font-size: 18px;
-}
-

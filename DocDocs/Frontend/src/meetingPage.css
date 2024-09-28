@@ -1,0 +1,17 @@
+.meeting-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .meeting-page h2 {
+    color: #6a0dad;
+  }
+  
+  .meeting-page p {
+    color: #4b0082;
+  }
+  
