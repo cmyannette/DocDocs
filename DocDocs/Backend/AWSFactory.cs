@@ -10,10 +10,9 @@ using DotNetEnv;
 public static class AWSFactory
 {
     private const string bucketName = "doc-docs-medical-recordings";
-    private const string filePath = "C:\\Users\\carte\\OneDrive\\Documents\\HackMidwest\\DocDocs\\Patient_Provider_Demo.m4a";
     private static readonly RegionEndpoint bucketRegion = RegionEndpoint.USWest2;
 
-    public static async Task UploadFileAsync()
+    public static async Task UploadFileAsync(string filePath)
     {
         Env.Load();
         string accessKey = Env.GetString("AWS_ACCESS_KEY");
