@@ -25,10 +25,10 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
-<<<<<<< HEAD
 DocDocs.GeneratedMSBuildEditorConfig.editorconfig
-=======
 # user specific folders:
 /obj
 /bin
->>>>>>> 6e1be155ec19fce7bda46db42348eeb1160d4027
+
+
+DocDocs.AssemblyInfo.cs
