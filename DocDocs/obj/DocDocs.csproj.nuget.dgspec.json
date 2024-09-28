@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/thomaswaller/HackMidwest/ProjectName/ProjectName.csproj": {}
+    "/Users/thomaswaller/HackMidwest/DocDocs/DocDocs.csproj": {}
   },
   "projects": {
-    "/Users/thomaswaller/HackMidwest/ProjectName/ProjectName.csproj": {
+    "/Users/thomaswaller/HackMidwest/DocDocs/DocDocs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/thomaswaller/HackMidwest/ProjectName/ProjectName.csproj",
-        "projectName": "ProjectName",
-        "projectPath": "/Users/thomaswaller/HackMidwest/ProjectName/ProjectName.csproj",
+        "projectUniqueName": "/Users/thomaswaller/HackMidwest/DocDocs/DocDocs.csproj",
+        "projectName": "DocDocs",
+        "projectPath": "/Users/thomaswaller/HackMidwest/DocDocs/DocDocs.csproj",
         "packagesPath": "/Users/thomaswaller/.nuget/packages/",
-        "outputPath": "/Users/thomaswaller/HackMidwest/ProjectName/obj/",
+        "outputPath": "/Users/thomaswaller/HackMidwest/DocDocs/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/thomaswaller/.nuget/NuGet/NuGet.Config"

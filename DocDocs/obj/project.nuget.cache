@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7p0461mirxg=",
+  "dgSpecHash": "SnE14AezRng=",
   "success": true,
-  "projectFilePath": "/Users/thomaswaller/HackMidwest/ProjectName/ProjectName.csproj",
+  "projectFilePath": "/Users/thomaswaller/HackMidwest/DocDocs/DocDocs.csproj",
   "expectedPackageFiles": [
     "/Users/thomaswaller/.nuget/packages/microsoft.aspnetcore.openapi/8.0.8/microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",
     "/Users/thomaswaller/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
