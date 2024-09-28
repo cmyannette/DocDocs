@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Login from './components/Login/Login.js';
 import './components/Meeting/meetingPage';
 
 function App() {
@@ -15,29 +16,12 @@ function App() {
 
   const handleLogin = () => {
     setIsLoggedIn(true);
-  }
+  };
 
   return (
     <div className="App">
       {!isLoggedIn ? (
-        <>
-          {/* Glassmorphism Login Page */}
-          <div className="background">
-            <div className="shape"></div>
-            <div className="shape"></div>
-          </div>
-          <form className="glass-form">
-            <h3>Welcome to DocDocs! Please Login Here</h3>
-
-            <label htmlFor="username">Username</label>
-            <input type="text" placeholder="Username" id="username" />
-
-            <label htmlFor="password">Password</label>
-            <input type="password" placeholder="Password" id="password" />
-
-            <button type="button" onClick={handleLogin}>Log In</button>
-          </form>
-        </>
+        <Login onLogin={handleLogin} />
       ) : (
         <>
           <div className="sidebar">
