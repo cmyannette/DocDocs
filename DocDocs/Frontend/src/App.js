@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Login from './components/Login/Login.js';
-import './components/Meeting/meetingPage';
+import MeetingPage from './components/Meeting/meetingPage';
 
 function App() {
   // State to track if user is logged in
