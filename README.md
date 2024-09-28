@@ -15,10 +15,10 @@
 
 
 ## What is the name of your App?
-
+DocDocs
 <br /><br />
 ## What does your app do?
-*Describe in a paragraph or so*
+DocDocs is an application that takes telealth calls and turns them into SOAP-style notes. It utilizes AWS HealthScribe 
 
 <br /><br />
 
