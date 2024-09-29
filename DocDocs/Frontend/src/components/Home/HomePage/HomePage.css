@@ -1,0 +1,191 @@
+
+
+
+
+/* General background and font settings */
+body {
+  background-color: #f5f5dc; /* Beige background */
+  color: #333333; /* Darker font for contrast */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333333; /* Darker headings */
+}
+
+a {
+  color: #03256C;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1768AC;
+}
+
+/* Main content without a white background */
+.main-content {
+  background: none; /* Removed any background colors to prevent white box */
+  height: 100%;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.welcome-message {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.no-meetings-message {
+  font-size: 18px;
+  color: #83B5D1;
+}
+
+.join-meeting-btn {
+  background: linear-gradient(135deg, #8a2be2, #83B5D1);
+  color: #ffffff;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(138,43,226, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.join-meeting-btn:hover {
+  background: linear-gradient(135deg, #8a2be2, #83B5D1);
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(138,43,226, 0.8);
+}
+
+/* Flexbox for the meetings section */
+#meetings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meeting-info {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.meeting-info.positive {
+  color: #28a745; /* Green if meetings exist */
+}
+
+.meeting-info.negative {
+  color: #dc3545; /* Red if no meetings */
+}
+
+.regular-text {
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    width: 90vw;
+    padding: 30px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .join-meeting-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 10vw;
+  }
+
+  .sidebar ul li a {
+    font-size: 12px;
+  }
+
+  .logout-btn {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .main-content {
+    width: 90vw;
+    margin-left: 80px; /* Adjusted for smaller sidebar */
+  }
+}
+
+
+/* The hero image */
+.hero-image {  
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../assets/doctor-hero-image.png");
+    /* Set a specific height */
+    height: 70vh;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-self: flex-start;
+    margin: 0;
+}
+  
+  /* Place text in the middle of the image */
+.hero-text {
+    width: 90vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    align-content: center;
+    color: white;
+}
+
+h1#hero-text {
+    margin: 50 px;
+    padding: 5vh;
+    font-size: 7em;
+    color: #f5f5dc;
+    text-shadow: 15px 15px 40px rgba(0,0,0, 0.8);
+
+}
+
+h3#hero-text {
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 15px 15px 40px rgba(0,0,0, 0.8);
+
+}
+
+/* THIS ONE NEEDS TO BE IN EVERY PAGE THAT NAVBAR NAVIGATES TO -  change to whatever the top level div is*/
+.main-content {
+    justify-self: flex-end;
+    margin-left: 10vw;
+    width: 90vw;
+}
