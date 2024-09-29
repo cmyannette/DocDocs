@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 import Login from './components/Login/Login.js';
-import NavBar from './components/Home/NavBar/NavBar.js'; // Ensure the path is correct
-import HomePage from './components/Home/HomePage/HomePage.js'; // Ensure the path is correct
-import MeetingPage from './components/Meeting/MeetingPage.js'; // Ensure the path is correct
+import NavBar from './components/Home/NavBar/NavBar.js'; 
+import HomePage from './components/Home/HomePage/HomePage.js';
+import MeetingPage from './components/Meeting/MeetingPage.js';
+import Notes from './components/Home/Notes/Notes.js';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -44,22 +46,21 @@ function App() {
       ) : (
         <>
           {meetingInProgress ? (
-            <MeetingPage 
-              patient={patient} 
-              meetings={meetings} 
-              onJoinMeeting={handleJoinMeeting} 
-              onEndMeeting={handleMeetingEnd} 
-            />
-          ) : (
-            <>
-              <NavBar patient={patient} onLogout={handleLogout} />
-              <HomePage 
+              <MeetingPage 
                 patient={patient} 
                 meetings={meetings} 
-                onJoinMeeting={handleJoinMeeting} // Pass the handleJoinMeeting function
+                onJoinMeeting={handleJoinMeeting} 
+                onEndMeeting={handleMeetingEnd} 
               />
-            </>
-          )}
+            ) : (
+              <>
+                <NavBar patient={patient} onLogout={handleLogout} />
+                <Routes>
+                  <Route path="/" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
+                  <Route path="/meeting-notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
+                </Routes>
+              </>
+            )}
         </>
       )}
     </div>
