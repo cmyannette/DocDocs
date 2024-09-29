@@ -1,17 +1,19 @@
 using System;
-using System.Threading.Tasks;
+using System.IO;
 using Amazon;
 using Amazon.S3;
 using Amazon.S3.Transfer;
 using Amazon.S3.Model;
 using Amazon.TranscribeService;
 using Amazon.TranscribeService.Model;
-using System.Configuration;
 using DotNetEnv;
+using System.Collections.Generic;
+using Amazon;
+using Amazon.BedrockRuntime;
+using Amazon.BedrockRuntime.Model;
 
 public class AWSFactory
 {
-    private const string bucketName = "doc-docs-medical-recordings";
     private static readonly RegionEndpoint bucketRegion = RegionEndpoint.USWest2;
     private readonly string accessKey;
     private readonly string secretKey;
@@ -24,7 +26,7 @@ public class AWSFactory
         s3Client = new AmazonS3Client(accessKey, secretKey, bucketRegion);
     }
 
-    public async Task UploadAudioAsync(string filePath)
+    public async Task UploadFileAsync(string filePath, string bucketName)
     {
         try
         {
@@ -105,6 +107,61 @@ public class AWSFactory
         catch (Exception e)
         {
             Console.WriteLine($"Error starting transcription job: {e.Message}");
+        }
+    }
+
+
+    public async Task<string> SummarizeNotes()
+    {
+        // Create a Bedrock Runtime client
+        var client = new AmazonBedrockRuntimeClient(accessKey, secretKey, bucketRegion);
+
+        // Set the model ID for Claude
+        var modelId = "anthropic.claude-3-5-sonnet-20240620-v1:0";
+
+        string filePath = ".\\output.txt";
+        string fileContent = "";
+        try
+        {
+            fileContent = File.ReadAllText(filePath);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+
+        // Create the request
+        var request = new ConverseRequest
+        {
+            ModelId = modelId,
+            Messages = new List<Message>
+            {
+                new Message
+                {
+                    Role = ConversationRole.User,
+                    Content = new List<ContentBlock> { new ContentBlock { Text = "You are a medical professional in charge of generating SOAP style notes of medical transcripts between a doctor and a patient. Take notes on this conversation:\n" + fileContent } }
+                }
+            },
+            InferenceConfig = new InferenceConfiguration()
+            {
+                MaxTokens = 512,
+                Temperature = 0.33F,
+                TopP = 0.9F
+            }
+        };
+
+        try
+        {
+            // Send the request to Bedrock and wait for the response
+            var response = await client.ConverseAsync(request);
+
+            // Extract and return the response text
+            return response?.Output?.Message?.Content?[0]?.Text ?? string.Empty;
+        }
+        catch (AmazonBedrockRuntimeException e)
+        {
+            Console.WriteLine($"ERROR: Can't invoke '{modelId}'. Reason: {e.Message}");
+            throw;
         }
     }
 }

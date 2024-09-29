@@ -2,6 +2,9 @@ public static class BackendMain {
 
     private const string filePath = "small-test.mp3";
     private const string transcriptName = "smallTest";
+    private const string outputPath = "output";
+    private const string medicalRecordingsBucket = "doc-docs-medical-recordings";
+    private const string outputsBucket = "doc-docs-outputs";
 
     public static async Task Main(string[] args)
         {
@@ -11,11 +14,15 @@ public static class BackendMain {
 
             // Upload File to AWS S3 Bucket
             AWSFactory AWS = new AWSFactory();
-            //await AWS.UploadAudioAsync(filePath);
+            //await AWS.UploadAudioAsync(filePath, medicalRecordingsBucket);
 
             // Transcribe file from S3 Bucket
             //await AWS.TranscribeFileAsync(filePath, transcriptName);
-            string transcript = await AWS.GetTranscriptAsync(transcriptName);
-            Console.WriteLine(transcript);
+            //string transcript = await AWS.GetTranscriptAsync(transcriptName);
+            //Parser parser = new Parser();
+            //await parser.ParseJsonToTextFileAsync(".\\test.json", ".\\output.txt");
+
+            string response = await AWS.SummarizeNotes();
+            Console.WriteLine(response);
         }
 }
