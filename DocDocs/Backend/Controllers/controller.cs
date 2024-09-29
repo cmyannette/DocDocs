@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
-using Microsoft.Extensions.Configuration;
 using DotNetEnv;
 
 namespace DocDocs.Backend.Controllers
@@ -9,22 +8,50 @@ namespace DocDocs.Backend.Controllers
     [Route("api/example")]
     public class ExampleController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
         private readonly HttpClient _httpClient;
 
-        public ExampleController(IConfiguration configuration, IHttpClientFactory httpClientFactory)
+        public ExampleController(IHttpClientFactory httpClientFactory)
         {
-            _configuration = configuration;
             _httpClient = httpClientFactory.CreateClient();
-            Env.Load();
+            Env.Load(); // Load environment variables from the .env file
         }
 
-        [HttpGet("get-file-by-id/{id}")]
-        public async Task<IActionResult> GetFileById(string id)
+       [HttpGet("get-file-by-id/{id}")]
+public async Task<IActionResult> GetFileById(string id)
+{
+    try
+    {
+        var pinataUrl = $"https://api.pinata.cloud/v3/files/{id}";
+        var pinataJwt = Environment.GetEnvironmentVariable("PINATA_JWT");
+
+        if (string.IsNullOrEmpty(pinataJwt))
+        {
+            return StatusCode(500, "PINATA_JWT environment variable is not set.");
+        }
+
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pinataJwt);
+        var response = await _httpClient.GetAsync(pinataUrl);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsStringAsync();  // Read content as string
+            return Content(content, "text/plain");  // Return as plain text
+        }
+
+        return BadRequest("Failed to fetch file from Pinata.");
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, $"Internal server error: {ex.Message}");
+    }
+}
+
+ [HttpPost("get-signed-url")]
+        public async Task<IActionResult> GetSignedUrl([FromBody] SignRequest request)
         {
             try
             {
-                var pinataUrl = $"https://api.pinata.cloud/v3/files/{id}";
+                var pinataUrl = "https://api.pinata.cloud/v3/files/sign";
                 var pinataJwt = Environment.GetEnvironmentVariable("PINATA_JWT");
 
                 if (string.IsNullOrEmpty(pinataJwt))
@@ -32,8 +59,17 @@ namespace DocDocs.Backend.Controllers
                     return StatusCode(500, "PINATA_JWT environment variable is not set.");
                 }
 
-                _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {pinataJwt}");
-                var response = await _httpClient.GetAsync(pinataUrl);
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pinataJwt);
+
+                var payload = new
+                {
+                    url = request.Url,
+                    expires = request.Expires,
+                    date = request.Date,
+                    method = request.Method
+                };
+
+                var response = await _httpClient.PostAsJsonAsync(pinataUrl, payload);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -41,13 +77,12 @@ namespace DocDocs.Backend.Controllers
                     return Content(content, "application/json");
                 }
 
-                return BadRequest("Failed to fetch file from Pinata.");
+                return BadRequest("Failed to generate signed URL from Pinata.");
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
-        }
 
         [HttpPost("upload-file")]
         public async Task<IActionResult> UploadFile([FromForm] IFormFile file, [FromForm] string name)
@@ -55,14 +90,16 @@ namespace DocDocs.Backend.Controllers
             try
             {
                 var pinataUrl = "https://api.pinata.cloud/v3/files";
-                var pinataJwt = _configuration["PINATA_JWT"];
+
+                // Retrieve the PINATA_JWT from environment variables
+                var pinataJwt = Environment.GetEnvironmentVariable("PINATA_JWT");
 
                 if (string.IsNullOrEmpty(pinataJwt))
                 {
                     return StatusCode(500, "PINATA_JWT environment variable is not set.");
                 }
 
-                _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {pinataJwt}");
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pinataJwt);
 
                 using (var content = new MultipartFormDataContent())
                 {
