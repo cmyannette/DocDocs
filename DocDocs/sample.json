@@ -1,0 +1,6 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "email": "john.doe@example.com",
+    "message": "Hello, IPFS! This is a test JSON file for Pinata."
+}
