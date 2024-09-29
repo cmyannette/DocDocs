@@ -1,0 +1,28 @@
+SOAP Note:
+
+S (Subjective):
+- Patient presents with itchy rash on arm that has been spreading
+- Rash appeared 5 days ago on wrist, spread to forearm over past couple of days
+- Describes rash as "really itchy and a bit red"
+- No new lotions, soaps, or detergents used recently
+- Patient went hiking last week, considers possibility of poison ivy exposure
+- No blisters present, just red and itchy
+- Rash seems to be getting worse, not better
+- Patient finds it difficult not to scratch the affected area
+
+O (Objective):
+- Red, itchy rash on wrist and forearm
+- No blisters observed
+- Rash has been spreading over the past few days
+
+A (Assessment):
+- Possible contact dermatitis from plant exposure (e.g., poison ivy)
+- Differential diagnosis may include other forms of dermatitis or allergic reaction
+
+P (Plan):
+1. Recommend over-the-counter hydrocortisone cream for itching
+2. Advise patient to keep the affected area clean and dry
+3. Suggest use of cool compresses for comfort
+4. Follow up in a few days if no improvement is seen with hydrocortisone cream
+5. Consider prescription options if condition persists or worsens
+6. Patient instructed to reach out if any changes occur

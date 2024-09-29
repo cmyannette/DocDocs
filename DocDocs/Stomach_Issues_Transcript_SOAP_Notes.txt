@@ -1,0 +1,29 @@
+SOAP Note:
+
+S (Subjective):
+- Patient reports stomach issues for the past 4 days
+- Symptoms include bloating and stomach pain, especially after eating
+- Occasional nausea, but no vomiting
+- Symptoms started about 4 days ago
+- Patient tried a new restaurant 2 days before symptoms began
+- History of occasional heartburn, but current symptoms are different
+- No major recent changes in diet
+- Patient describes the discomfort as "really uncomfortable"
+
+O (Objective):
+- No objective measurements or examinations noted in the conversation
+
+A (Assessment):
+- Possible food-related gastric distress
+- Differential diagnoses may include gastritis, food poisoning, or food sensitivity
+
+P (Plan):
+1. Recommend bland diet for the next few days
+   - Avoid spicy, greasy, or acidic foods
+2. Increase water intake
+3. Avoid alcohol and caffeine
+4. Monitor for worsening symptoms, including:
+   - Fever
+   - Blood in stool
+5. Follow-up appointment scheduled in one week
+6. Patient instructed to reach out immediately if symptoms worsen or new symptoms appear

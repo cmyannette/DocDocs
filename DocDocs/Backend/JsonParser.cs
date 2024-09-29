@@ -8,6 +8,7 @@ class JsonParser
 {
     public async Task<string> ParseJsonToTextFileAsync(string jsonFilePath, string outputFilePath)
     {
+        jsonFilePath = $".\\{jsonFilePath}.json";
         try
         {
             // Read the JSON file asynchronously
