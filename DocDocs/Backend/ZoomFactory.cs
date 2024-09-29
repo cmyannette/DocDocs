@@ -30,7 +30,7 @@ public class ZoomFactory
             var accessToken = await GetAccessToken();
             var recordings = await GetMeetingRecordings(meetingId, accessToken);
             var audioRecording = recordings.recording_files
-                .FirstOrDefault(r => r.recording_type == "audio_only" && r.file_type == "WAV");
+                .FirstOrDefault(r => r.recording_type == "audio_only");
 
             if (audioRecording == null)
             {
@@ -38,6 +38,19 @@ public class ZoomFactory
             }
 
             var audioData = await DownloadRecordingFile(audioRecording.download_url, accessToken);
+
+            // Define the file path where the recording will be saved
+            string directoryPath = ".\\Media";
+            string fileName = $"Recording_{meetingId}.{audioRecording.file_type}";
+            string filePath = Path.Combine(directoryPath, fileName);
+
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            await File.WriteAllBytesAsync(filePath, audioData);
+            Console.WriteLine($"Audio recording saved at: {filePath}");
         }
         catch (Exception ex)
         {
