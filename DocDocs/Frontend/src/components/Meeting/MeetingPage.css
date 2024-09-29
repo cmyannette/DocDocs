@@ -1,0 +1,70 @@
+/* MeetingPage.css */
+.meeting-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it covers the full viewport */
+  background-color: rgba(255, 245, 235, 0.95); /* Light beige with slight transparency */
+  border: 2px solid #d14f71; /* Matches sidebar color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.join-meeting-btn {
+  background-color: #8a2be2; /* Primary button color */
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.join-meeting-btn:hover {
+  background-color: #6a0dad; /* Darker purple on hover */
+  transform: translateY(-2px); /* Lift button slightly */
+}
+
+.meeting-in-progress {
+  text-align: center;
+}
+
+.meeting-in-progress h2 {
+  font-size: 26px;
+  color: #8a2be2; /* Highlight active meeting */
+}
+
+.end-meeting-btn {
+  background-color: #d14f71; /* Primary button color */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better look */
+}
+
+.end-meeting-btn:hover {
+  background-color: #a1283e; /* Darker on hover */
+  transform: translateY(-2px); /* Button lift effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    width: 95%; /* Adjust width for smaller screens */
+  }
+
+  .join-meeting-btn, .end-meeting-btn {
+    font-size: 14px; /* Smaller button text for smaller screens */
+    padding: 10px 20px;
+  }
+}

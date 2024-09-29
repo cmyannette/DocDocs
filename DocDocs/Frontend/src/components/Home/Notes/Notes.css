@@ -1,0 +1,26 @@
+.notes-section {
+    margin-left: 10vw;
+    justify-content: flex-end;
+    width: 90vw;
+    padding: 50px;
+    background: none; /* Removed any background colors to prevent white box */
+    border-radius: 15px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.card-container {
+    display:flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.card {
+    width: 25%;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 10px;
+}

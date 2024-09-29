@@ -13,7 +13,14 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+<<<<<<< HEAD
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.0" />
+=======
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+>>>>>>> 54581c5c93f3e1a0e39bb6988b65b74bb4ca8c5a
   </ItemGroup>
+
+
+  
 
 </Project>

@@ -1,60 +1,72 @@
+// App.js
 import React, { useState } from 'react';
 import './App.css';
+import Login from './components/Login/Login.js';
+import NavBar from './components/Home/NavBar/NavBar.js'; 
+import HomePage from './components/Home/HomePage/HomePage.js';
+import MeetingPage from './components/Meeting/MeetingPage.js';
+import Notes from './components/Home/Notes/Notes.js';
+import ViewNote from './components/Home/ViewNote/ViewNote.js'; // Import ViewNote
+import EditNotes from './components/Home/EditNotes/EditNotes.js'; // Import EditNotes
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
-  // State to track if user is logged in
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [meetingInProgress, setMeetingInProgress] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false); // Default to false
 
   const patient = {
     name: 'John Doe',
-    pfp: 'https://via.placeholder.com/150' // Replace with actual photo URL
+    pfp: 'https://via.placeholder.com/150', // Replace with actual photo URL
   };
 
   const meetings = 2;
 
-  // Handle login
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  const handleJoinMeeting = () => {
+    setMeetingInProgress(true);
+  };
+
+  const handleMeetingEnd = () => {
+    setMeetingInProgress(false); // Reset the meeting state
+  };
+
   return (
-    <div className="App">
-      {!isLoggedIn ? (
-        <div className="login-page">
-          <div className="login-form">
-            <h2>Login</h2>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
-            <button onClick={handleLogin}>Login</button>
-            <p><a href="#">Forgot Password?</a></p>
-          </div>
-        </div>
-      ) : (
-        <>
-          <div className="sidebar">
-            <div className="profile">
-              <img src={patient.pfp} alt="Patient Profile" />
-              <div className="username">{patient.name}</div>
-            </div>
-            <ul>
-              <li><a href="#meetings">Meetings</a></li>
-              <li><a href="#notes">Notes</a></li>
-            </ul>
-            <button className="logout-btn">Logout</button>
-          </div>
-          <div className="main-content">
-            <section id="meetings">
-              <h2>Meetings</h2>
-              <p>Hello {patient.name}. You have {meetings > 0 ? meetings : 'no'} upcoming meetings.</p>
-            </section>
-            <section id="notes">
-              <h2>Notes</h2>
-              <p>Here are your notes...</p>
-            </section>
-          </div>
-        </>
-      )}
-    </div>
+    <Router>
+      <div className="App">
+        {!isLoggedIn ? (
+          <Login onLogin={handleLogin} setIsAdmin={setIsAdmin} />
+        ) : (
+          <>
+            {meetingInProgress ? (
+              <MeetingPage 
+                patient={patient} 
+                meetings={meetings} 
+                onJoinMeeting={handleJoinMeeting} 
+                onEndMeeting={handleMeetingEnd} 
+              />
+            ) : (
+              <>
+                <NavBar patient={patient} onLogout={handleLogout} />
+                <Routes>
+                  <Route path="/" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
+                  <Route path="/notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
+                  <Route path="/view-note/:noteId" element={<ViewNote />} /> {/* New route for ViewNote */}
+                  <Route path="/edit-notes" element={<EditNotes />} /> {/* Route for EditNotes */}
+                </Routes>
+              </>
+            )}
+          </>
+        )}
+      </div>
+    </Router>
   );
 }
 

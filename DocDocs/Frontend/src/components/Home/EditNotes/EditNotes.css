@@ -1,0 +1,67 @@
+/* EditNotes.css */
+.edit-notes-section {
+    width: 90vw;
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .edit-notes-section h2 {
+    margin-bottom: 20px; /* Space between title and textarea */
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Darker text for better readability */
+    font-size: 1.5em; /* Increased font size for heading */
+    text-align: center; /* Center align heading */
+  }
+  
+  .edit-notes-section label {
+    margin-bottom: 10px; /* Space between label and textarea */
+    font-weight: bold;
+    font-size: 1.2em; /* Slightly larger font */
+    color: #555; /* Dark gray for contrast */
+    text-align: center; /* Center align label */
+    width: 100%; /* Make label full width */
+    max-width: 600px; /* Match the width of the textarea */
+  }
+  
+  .edit-notes-section textarea {
+    width: 40vw;
+    max-width: 40vw; /* Increased max width for the textarea */
+    height: 60vh; /* Increased height for the text area */
+    padding: 10px; /* Padding inside the text area */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    resize: none; /* Disable resizing */
+    font-size: 1em; /* Font size for text area */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    text-align: left; /* Left align text in textarea */
+  }
+  
+  .edit-notes-section button {
+    justify-self:center;
+    margin-top: 20px; /* Space above button */
+    padding: 10px 20px; /* Button padding */
+    margin:10px;
+    background-color: #007bff; /* Primary button color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 1em; /* Font size for button */
+    transition: background-color 0.3s; /* Smooth transition */
+    text-align: center; /* Center align button text */
+    width: 100%; /* Make button full width */
+    max-width: 40vw; /* Match the width of the textarea */
+  }
+  
+  .edit-notes-section button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
