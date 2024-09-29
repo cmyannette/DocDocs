@@ -9,8 +9,11 @@
   <ItemGroup>
     <PackageReference Include="AWSSDK.S3" Version="3.7.403.5" />
     <PackageReference Include="AWSSDK.TranscribeService" Version="3.7.400.26" />
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.0" />
   </ItemGroup>
 
 </Project>
