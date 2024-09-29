@@ -7,7 +7,7 @@ function NavBar({ patient, onLogout }) {
   return (
     <div className="sidebar">
       <div className="profile">
-        <img src={patient.pfp} alt="Profile" />
+        <img src="./Test.png" alt="Profile" />
         <div className="username">{patient.name}</div>
       </div>
       <ul>

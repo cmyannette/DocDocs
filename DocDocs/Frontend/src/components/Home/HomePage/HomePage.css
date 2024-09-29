@@ -200,7 +200,7 @@ h1#hero-text {
   margin: 0;
   padding: 5vh;
   font-size: 7em;
-  color: transparent;
+  color: white;
   background: linear-gradient(135deg, #8a2be2, #83B5D1);
   background-clip: text;
   -webkit-background-clip: text;
