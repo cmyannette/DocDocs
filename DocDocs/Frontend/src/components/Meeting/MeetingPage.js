@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 const MeetingPage = ({ patient, meetings, onEndMeeting }) => {
   const navigate = useNavigate();
   
+  // Removed the unused state
+  // const [meetingInProgress, setMeetingInProgress] = useState(true);
+
   const handleMeetingEnd = () => {
     const wantsNotes = window.confirm("Do you want meeting notes?");
     if (wantsNotes) {
