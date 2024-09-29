@@ -1,6 +1,7 @@
 // NavBar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 function NavBar({ patient, onLogout }) {
   return (
@@ -10,8 +11,8 @@ function NavBar({ patient, onLogout }) {
         <div className="username">{patient.name}</div>
       </div>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/meeting-notes">Meeting Notes</Link></li>
+        <li><Link to="/home-page">Home</Link></li>
+        <li><Link to="/notes">Meeting Notes</Link></li>
       </ul>
       <button className="logout-btn" onClick={onLogout}>Logout</button>
     </div>

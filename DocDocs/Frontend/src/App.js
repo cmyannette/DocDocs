@@ -5,7 +5,7 @@ import NavBar from './components/Home/NavBar/NavBar.js';
 import HomePage from './components/Home/HomePage/HomePage.js';
 import MeetingPage from './components/Meeting/MeetingPage.js';
 import Notes from './components/Home/Notes/Notes.js';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -40,30 +40,32 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {!isLoggedIn ? (
-        <Login onLogin={handleLogin} />
-      ) : (
-        <>
-          {meetingInProgress ? (
-              <MeetingPage 
-                patient={patient} 
-                meetings={meetings} 
-                onJoinMeeting={handleJoinMeeting} 
-                onEndMeeting={handleMeetingEnd} 
-              />
-            ) : (
-              <>
-                <NavBar patient={patient} onLogout={handleLogout} />
-                <Routes>
-                  <Route path="/" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
-                  <Route path="/meeting-notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
-                </Routes>
-              </>
-            )}
-        </>
-      )}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        {!isLoggedIn ? (
+          <Login onLogin={handleLogin} />
+        ) : (
+          <>
+            {meetingInProgress ? (
+                <MeetingPage 
+                  patient={patient} 
+                  meetings={meetings} 
+                  onJoinMeeting={handleJoinMeeting} 
+                  onEndMeeting={handleMeetingEnd} 
+                />
+              ) : (
+                <>
+                  <NavBar patient={patient} onLogout={handleLogout} />
+                  <Routes>
+                    <Route path="/home-page" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
+                    <Route path="/notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
+                  </Routes>
+                </>
+              )}
+          </>
+        )}
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,3 +1,10 @@
+/* THIS ONE NEEDS TO BE IN EVERY PAGE THAT NAVBAR NAVIGATES TO -  change to whatever the top level div is*/
+.main-content {
+    justify-self: flex-end;
+    margin-left: 10vw;
+    width: 90vw;
+}
+
 /* General background and font settings */
 body {
   background-color: #f5f5dc; /* Beige background */
@@ -22,62 +29,11 @@ a:hover {
   color: #ff0080;
 }
 
-/* Sidebar with gradient */
-.sidebar {
-  width: 100px;
-  background: linear-gradient(135deg, #8a2be2, #ff6ec7);
-  color: white;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-}
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar ul li a {
-  color: white;
-  padding: 12px;
-  border-radius: 5px;
-  display: block;
-  text-align: center;
-}
-
-.sidebar ul li a:hover {
-  background-color: #da5fd2;
-}
-
-/* Fix Logout Button Position */
-.logout-btn {
-  background-color: #ff0080;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 14px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.logout-btn:hover {
-  background-color: #ff4f92;
-}
 
 /* Main content without a white background */
 .main-content {
-  margin: 0 auto;
   padding: 50px;
-  width: 80%;
   background: none; /* Removed any background colors to prevent white box */
   border-radius: 15px;
   height: 100%;

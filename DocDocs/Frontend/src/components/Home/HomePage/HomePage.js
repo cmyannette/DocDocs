@@ -6,6 +6,7 @@ function HomePage({ patient, meetings, onJoinMeeting }) {
     <div className="main-content">
       <section id="home">
         <h2>Home</h2>
+        <p> Welcome to <b>DocDocs</b>, Your telehealth transcription assistant! </p>
       </section>
       <section id="meetings">
         <h2>Meetings</h2>
@@ -16,10 +17,6 @@ function HomePage({ patient, meetings, onJoinMeeting }) {
             Join Meeting
           </button>
         )}
-      </section>
-      <section id="notes">
-        <h2>Notes</h2>
-        <p>Here are your notes...</p>
       </section>
     </div>
   );

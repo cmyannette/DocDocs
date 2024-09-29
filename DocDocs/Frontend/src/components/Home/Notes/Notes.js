@@ -1,5 +1,6 @@
 // MeetingNotes.js
 import React from 'react';
+import './Notes.css';
 
 function Notes({ isAdmin }) {
   const exampleNotesAdmin = [
