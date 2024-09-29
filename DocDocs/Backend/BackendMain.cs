@@ -1,6 +1,7 @@
 public static class BackendMain {
 
-    private const string filePath = ".\\Patient_Provider_Demo.m4a";
+    private const string filePath = "small-test.mp3";
+    private const string transcriptName = "smallTest";
 
     public static async Task Main(string[] args)
         {
@@ -9,6 +10,12 @@ public static class BackendMain {
             
 
             // Upload File to AWS S3 Bucket
-            await AWSFactory.UploadFileAsync(filePath);
+            AWSFactory AWS = new AWSFactory();
+            //await AWS.UploadAudioAsync(filePath);
+
+            // Transcribe file from S3 Bucket
+            //await AWS.TranscribeFileAsync(filePath, transcriptName);
+            string transcript = await AWS.GetTranscriptAsync(transcriptName);
+            Console.WriteLine(transcript);
         }
 }
