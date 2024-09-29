@@ -34,7 +34,7 @@ function App() {
     role: Number(process.env.REACT_APP_ROLE),
     sdkKey: process.env.REACT_APP_SDK_KEY,
     sdkSecret: process.env.REACT_APP_SDK_SECRET,
-    password: process.env.REACT_APP_PASSWORD,
+    passWord: process.env.REACT_APP_PASSWORD,
     userName: process.env.REACT_APP_USER_NAME,
     userEmail: process.env.REACT_APP_USER_EMAIL,
     leaveUrl: process.env.REACT_APP_LEAVE_URL
