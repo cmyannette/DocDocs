@@ -32,13 +32,13 @@ function App() {
   // Removed the handleMeetingEnd since it's not used
 
   const payload = {
-    meetingNumber: '123456789',
+    meetingNumber: '5773745739',
     role: 0,
-    sdkKey: 'yourSdkKey',
-    sdkSecret: 'yourSdkSecret',
-    password: 'yourPassword',
-    userName: 'Testing',
-    userEmail: '',
+    sdkKey: 'qI7xXbDvNi15ZQjfe1tk7G5Slv9MhML7qan6',
+    sdkSecret: 'tFkOqBdn82ELTNW6enSDeq83gnHhqnKV1BPa',
+    password: 'v#Agi9ilDVTB4#aQZMn6ga2ib#g8#&',
+    userName: 'GAWKTUAH',
+    userEmail: 'hackmidwest24@nugwin.net',
     leaveUrl: 'https://localhost:3000'
   };
 

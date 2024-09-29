@@ -2,7 +2,7 @@ import React, { useEffect, Fragment } from "react";
 
 const Meeting = ({ payload }) => {
     useEffect(() => {
-        let isMounted = true; // Track if the component is mounted
+        let isMounted = true;
 
         const initializeZoom = async () => {
             try {
@@ -11,18 +11,18 @@ const Meeting = ({ payload }) => {
                 ZoomMtg.setZoomJSLib('https://source.zoom.us/lib', 'av');
                 ZoomMtg.prepareWebSDK();
 
-                if (isMounted) { // Only proceed if the component is still mounted
+                if (isMounted) {
                     ZoomMtg.generateSDKSignature({
                         meetingNumber: payload.meetingNumber,
                         role: payload.role,
                         sdkKey: payload.sdkKey,
                         sdkSecret: payload.sdkSecret,
                         success: function (signature) {
-                            if (isMounted) { // Check before calling init
+                            if (isMounted) {
                                 ZoomMtg.init({
                                     leaveUrl: payload.leaveUrl,
                                     success: function () {
-                                        if (isMounted) { // Check before calling join
+                                        if (isMounted) {
                                             ZoomMtg.join({
                                                 meetingNumber: payload.meetingNumber,
                                                 signature: signature.result,
@@ -35,31 +35,31 @@ const Meeting = ({ payload }) => {
                                                     console.log('--Joined--');
                                                 },
                                                 error: function (error) {
-                                                    console.error("Join Error:", error);
+                                                    console.error("Join Error:", error.message || JSON.stringify(error));
                                                 }
                                             });
                                         }
                                     },
                                     error: function (error) {
-                                        console.error("Init Error:", error);
+                                        console.error("Init Error:", error.message || JSON.stringify(error));
                                     }
                                 });
                             }
                         },
                         error: function (error) {
-                            console.error("Signature Error:", error);
+                            console.error("Signature Error:", error.message || JSON.stringify(error));
                         }
                     });
                 }
             } catch (error) {
-                console.error("Error initializing Zoom SDK:", error);
+                console.error("Error initializing Zoom SDK:", error.message || JSON.stringify(error));
             }
         };
 
         initializeZoom();
 
         return () => {
-            isMounted = false; // Mark as unmounted on cleanup
+            isMounted = false;
         };
     }, [payload]);
 
