@@ -6,7 +6,8 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  overflow: hidden; /* Prevent scroll */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Allow vertical scroll if needed */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,6 +36,7 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 10px;
+  z-index: 10; /* Ensure it stays above the main content */
 }
 
 .sidebar h2 {
@@ -107,7 +109,14 @@ a:hover {
   background-color: #da4242;
 }
 
-
+/* Main Content */
+.main-content {
+  margin-left: 90px; /* Align main content beside the sidebar */
+  padding: 20px;
+  width: calc(100% - 90px); /* Adjust width so it doesn't overlap sidebar */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Ensure no horizontal scrolling */
+}
 
 /* Login Page */
 .login-page {
@@ -210,21 +219,15 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.47);
 }
 
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .sidebar {
     width: 150px;
   }
-  
-  .sidebar ul li a {
-    font-size: 14px;
-  }
-  
+
   .main-content {
-    margin-left: 170px;
-    width: calc(100% - 170px);
+    margin-left: 150px;
+    width: calc(100% - 150px);
   }
   
   .btn {
@@ -240,17 +243,16 @@ a:hover {
   .btn:hover {
     background-color: #6a0dad;
   }
-  
 }
 
 @media (max-width: 576px) {
   .sidebar {
     width: 100px;
   }
-  
+
   .main-content {
-    margin-left: 110px;
-    width: calc(100% - 110px);
+    margin-left: 100px;
+    width: calc(100% - 100px);
   }
 }
 
@@ -262,5 +264,4 @@ a:hover {
 
 NavBar {
   position: fixed;
-
 }
