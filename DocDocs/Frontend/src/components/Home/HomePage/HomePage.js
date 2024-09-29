@@ -8,7 +8,7 @@ function HomePage({ patient, meetings, onJoinMeeting }) {
         <div className="hero-image">
           <div className="hero-text" id="hero-text">
             <h1 id="hero-text">Welcome to <b>DocDocs</b></h1>
-            <h3 id="hero-text">Your telehealth transcription assistant! </h3>
+            <h3 id="hero-text">Your own personal telehealth transcription assistant! </h3>
           </div>
         </div>
       </section>
