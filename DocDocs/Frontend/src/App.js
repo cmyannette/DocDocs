@@ -6,7 +6,8 @@ import NavBar from './components/Home/NavBar/NavBar.js';
 import HomePage from './components/Home/HomePage/HomePage.js';
 import MeetingPage from './components/Meeting/MeetingPage.js';
 import Notes from './components/Home/Notes/Notes.js';
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+import ViewNote from './components/Home/ViewNote/ViewNote.js'; // Import ViewNote
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -37,7 +38,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
         {!isLoggedIn ? (
           <Login onLogin={handleLogin} setIsAdmin={setIsAdmin} />
@@ -56,13 +57,14 @@ function App() {
                 <Routes>
                   <Route path="/" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
                   <Route path="/notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
+                  <Route path="/view-note/:noteId" element={<ViewNote />} /> {/* New route for ViewNote */}
                 </Routes>
               </>
             )}
           </>
         )}
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
