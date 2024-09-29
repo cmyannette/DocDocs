@@ -170,18 +170,16 @@ body {
 }
 
 /* The hero image */
-.hero-image {  
-    display: flex;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../assets/doctor-hero-image.png");
-    /* Set a specific height */
-    height: 70vh;
-  
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-self: flex-start;
-    margin: 0;
+.hero-image {
+  display: flex;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../assets/doctor-hero-image.png");
+  height: 70vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
 }
   
   /* Place text in the middle of the image */
@@ -194,12 +192,16 @@ body {
 }
 
 h1#hero-text {
-    margin: 50 px;
-    padding: 5vh;
-    font-size: 7em;
-    color: #f5f5dc;
-    text-shadow: 15px 15px 40px rgba(0,0,0, 0.8);
-
+  margin: 0;
+  padding: 5vh;
+  font-size: 7em;
+  color: transparent;
+  background: linear-gradient(135deg, #8a2be2, #83B5D1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 15px 15px 40px rgba(0, 0, 0, 0.8);
+  white-space: nowrap; /* Keep the text on one line */
+  text-align: center; /* Align text center */
 }
 
 h3#hero-text {
