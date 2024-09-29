@@ -28,7 +28,7 @@ public class ZoomFactory
         try
         {
             var accessToken = await GetAccessToken();
-            var recordings = await GetMeetingRecordings(meetingId);
+            var recordings = await GetMeetingRecordings(meetingId, accessToken);
             var audioRecording = recordings.recording_files
                 .FirstOrDefault(r => r.recording_type == "audio_only" && r.file_type == "WAV");
 
@@ -65,7 +65,7 @@ public class ZoomFactory
         {
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authBase64);
 
-            var url = $"https://zoom.us/oauth/token?grant_type=client_credentials&account_id={accountId}";
+            var url = $"https://zoom.us/oauth/token?grant_type=account_credentials&account_id={accountId}";
 
             var response = await client.PostAsync(url, null);
             var content = await response.Content.ReadAsStringAsync();
@@ -82,11 +82,11 @@ public class ZoomFactory
         }
     }
 
-    private async Task<RecordingResponse> GetMeetingRecordings(string meetingId)
+    private async Task<RecordingResponse> GetMeetingRecordings(string meetingId, string accessToken)
     {
         using (var client = new HttpClient())
         {
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Env.GetString("ZOOM_JWT_TOKEN"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
             var url = $"https://api.zoom.us/v2/meetings/{meetingId}/recordings";
 
