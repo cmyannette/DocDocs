@@ -1,0 +1,26 @@
+/* MeetingPage.css */
+.meeting-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 40px); /* Full height minus padding */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  border: 2px solid #d14f71; /* Border color to match sidebar */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+}
+
+.end-meeting-btn {
+  background-color: #d14f71; /* Button color */
+  color: white; /* Text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.end-meeting-btn:hover {
+  background-color: #a1283e; /* Darker on hover */
+}

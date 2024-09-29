@@ -24,8 +24,8 @@ a:hover {
 
 /* Sidebar */
 .sidebar {
-  width: 200px;
-  background-color: #6a0dad;
+  width: 90px;
+  background-color: #d14f71;
   color: white;
   height: 100vh;
   position: fixed;
@@ -40,7 +40,14 @@ a:hover {
 .sidebar h2 {
   margin-bottom: 20px;
   font-size: 18px;
-  text-align: center;
+  text-align: left;
+  background-color: #8a2be2;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 /* Profile section in sidebar */
@@ -98,7 +105,7 @@ a:hover {
 }
 
 .logout-btn:hover {
-  background-color: #6a0dad;
+  background-color: #da4242;
 }
 
 /* Main Content */
