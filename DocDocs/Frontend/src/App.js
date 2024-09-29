@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-rou
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [meetingInProgress, setMeetingInProgress] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
 
   const patient = {
     name: 'John Doe',
