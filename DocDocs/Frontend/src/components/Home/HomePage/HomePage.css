@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> Feature-AWS
 /* General background and font settings */
 body {
   background-color: #f5f5dc; /* Beige background */
@@ -13,7 +10,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-<<<<<<< HEAD
   overflow-y: scroll; /* Enable vertical scroll */
 }
 
@@ -40,22 +36,6 @@ body::-webkit-scrollbar-thumb:hover {
 body {
   scrollbar-color: #8a2be2 #f5f5dc; /* Thumb and track colors for Firefox */
   scrollbar-width: thin; /* Thin scrollbar */
-=======
-  overflow: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #333333; /* Darker headings */
-}
-
-a {
-  color: #03256C;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #1768AC;
->>>>>>> Feature-AWS
 }
 
 /* Main content without a white background */
@@ -63,10 +43,7 @@ a:hover {
   background: none; /* Removed any background colors to prevent white box */
   height: 100%;
   overflow-y: auto;
-<<<<<<< HEAD
   padding-right: 20px; /* Add padding so content doesn't overlap the scrollbar */
-=======
->>>>>>> Feature-AWS
 }
 
 .section-title {
@@ -77,11 +54,7 @@ a:hover {
 }
 
 .welcome-message {
-<<<<<<< HEAD
-  font-size: 48px; /* Increase the size of the welcome message */
-=======
   font-size: 20px;
->>>>>>> Feature-AWS
   color: #333333;
   margin-bottom: 30px;
 }
@@ -105,11 +78,7 @@ a:hover {
   border-radius: 50px;
   font-size: 18px;
   font-weight: bold;
-<<<<<<< HEAD
-  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
-=======
   box-shadow: 0 8px 20px rgba(138,43,226, 0.6);
->>>>>>> Feature-AWS
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -117,11 +86,7 @@ a:hover {
 .join-meeting-btn:hover {
   background: linear-gradient(135deg, #8a2be2, #83B5D1);
   transform: scale(1.05);
-<<<<<<< HEAD
-  box-shadow: 0 12px 30px rgba(138, 43, 226, 0.8);
-=======
   box-shadow: 0 12px 30px rgba(138,43,226, 0.8);
->>>>>>> Feature-AWS
 }
 
 /* Flexbox for the meetings section */
@@ -131,7 +96,6 @@ a:hover {
   align-items: center;
 }
 
-<<<<<<< HEAD
 /* Update for the meetings header */
 .meetings-header {
   font-size: 42px; /* Make header bigger */
@@ -139,8 +103,6 @@ a:hover {
   font-weight: bold;
 }
 
-=======
->>>>>>> Feature-AWS
 .meeting-info {
   font-size: 20px;
   font-weight: bold;
@@ -155,7 +117,6 @@ a:hover {
   color: #dc3545; /* Red if no meetings */
 }
 
-<<<<<<< HEAD
 /* Styling for the patient name in purple */
 .patient-name {
   color: #8a2be2; /* Purple color */
@@ -169,8 +130,6 @@ a:hover {
   text-decoration: underline; /* Underline text */
 }
 
-=======
->>>>>>> Feature-AWS
 .regular-text {
   font-size: 18px;
   color: #333333;
@@ -214,10 +173,7 @@ a:hover {
   }
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> Feature-AWS
 /* The hero image */
 .hero-image {  
     display: flex;
@@ -265,8 +221,5 @@ h3#hero-text {
     justify-self: flex-end;
     margin-left: 10vw;
     width: 90vw;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Feature-AWS
+
