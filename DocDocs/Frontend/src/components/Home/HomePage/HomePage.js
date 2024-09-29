@@ -3,9 +3,14 @@ import './HomePage.css';
 
 function HomePage({ patient, meetings, onJoinMeeting }) {
   return (
-    <div className="main-content">
+    <div class="main-content">
       <section id="home">
-        <h2>Home</h2>
+      <div class="hero-image">
+        <div class="hero-text" id="hero-text">
+            <h1 id="hero-text">Welcome to <b>DocDocs</b></h1>
+            <h3 id="hero-text">Your telehealth transcription assistant! </h3>
+        </div>
+      </div>
       </section>
       <section id="meetings">
         <h2>Meetings</h2>
@@ -16,10 +21,6 @@ function HomePage({ patient, meetings, onJoinMeeting }) {
             Join Meeting
           </button>
         )}
-      </section>
-      <section id="notes">
-        <h2>Notes</h2>
-        <p>Here are your notes...</p>
       </section>
     </div>
   );
