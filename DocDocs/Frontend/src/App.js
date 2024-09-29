@@ -8,6 +8,7 @@ import MeetingPage from './components/Meeting/MeetingPage'; // Import the Meetin
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [meetingInProgress, setMeetingInProgress] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const patient = {
     name: 'John Doe',
@@ -30,6 +31,10 @@ function App() {
 
   const handleMeetingEnd = () => {
     setMeetingInProgress(false); // Reset the meeting state
+  };
+
+  const handleIsAdmin = () => {
+    setIsAdmin(!isAdmin);
   };
 
   return (
