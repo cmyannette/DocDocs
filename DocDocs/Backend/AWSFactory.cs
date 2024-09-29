@@ -8,7 +8,6 @@ using Amazon.TranscribeService;
 using Amazon.TranscribeService.Model;
 using DotNetEnv;
 using System.Collections.Generic;
-using Amazon;
 using Amazon.BedrockRuntime;
 using Amazon.BedrockRuntime.Model;
 
