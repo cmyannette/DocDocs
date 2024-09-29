@@ -4,7 +4,7 @@
 .sidebar {
     justify-self: flex-start;
     width: 10vw;
-    background: linear-gradient(135deg, #8a2be2, #ff6ec7);
+    background: linear-gradient(135deg, #8a2be2, #83B5D1);
     color: white;
     height: 100vh;
     position: fixed;
@@ -32,12 +32,12 @@
   }
   
   .sidebar ul li a:hover {
-    background-color: #da5fd2;
+    background-color: #1768AC;
   }
   
   /* Fix Logout Button Position */
   .logout-btn {
-    background-color: #ff0080;
+    background-color: #03256C;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -49,5 +49,5 @@
   }
   
   .logout-btn:hover {
-    background-color: #ff4f92;
+    background-color: #1768AC;
   }

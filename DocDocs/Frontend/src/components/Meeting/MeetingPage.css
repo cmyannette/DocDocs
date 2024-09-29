@@ -12,24 +12,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Main content styling */
-.main-content {
-  text-align: center;
-  width: 80%; /* Adjust width for better layout */
-  margin-bottom: 20px;
-}
-
-.main-content h2 {
-  font-size: 28px; /* Larger heading for better visibility */
-  color: #4b2a4f; /* Darker text for contrast */
-}
-
-.main-content p {
-  font-size: 18px; /* Larger text */
-  color: #333; /* Darker font color for readability */
-  margin: 10px 0;
-}
-
 .join-meeting-btn {
   background-color: #8a2be2; /* Primary button color */
   color: #fff;

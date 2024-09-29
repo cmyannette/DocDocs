@@ -1,9 +1,6 @@
-/* THIS ONE NEEDS TO BE IN EVERY PAGE THAT NAVBAR NAVIGATES TO -  change to whatever the top level div is*/
-.main-content {
-    justify-self: flex-end;
-    margin-left: 10vw;
-    width: 90vw;
-}
+
+
+
 
 /* General background and font settings */
 body {
@@ -33,9 +30,7 @@ a:hover {
 
 /* Main content without a white background */
 .main-content {
-  padding: 50px;
   background: none; /* Removed any background colors to prevent white box */
-  border-radius: 15px;
   height: 100%;
   overflow-y: auto;
 }
@@ -113,7 +108,7 @@ a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   .main-content {
-    width: 90%;
+    width: 90vw;
     padding: 30px;
   }
 
@@ -129,7 +124,7 @@ a:hover {
 
 @media (max-width: 576px) {
   .sidebar {
-    width: 70px;
+    width: 10vw;
   }
 
   .sidebar ul li a {
@@ -142,7 +137,57 @@ a:hover {
   }
 
   .main-content {
-    width: 85%;
+    width: 90vw;
     margin-left: 80px; /* Adjusted for smaller sidebar */
   }
+}
+
+
+/* The hero image */
+.hero-image {  
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../assets/doctor-hero-image.png");
+    /* Set a specific height */
+    height: 70vh;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-self: flex-start;
+    margin: 0;
+}
+  
+  /* Place text in the middle of the image */
+.hero-text {
+    width: 90vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    align-content: center;
+    color: white;
+}
+
+h1#hero-text {
+    margin: 50 px;
+    padding: 5vh;
+    font-size: 7em;
+    color: #f5f5dc;
+    text-shadow: 15px 15px 40px rgba(0,0,0, 0.8);
+
+}
+
+h3#hero-text {
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 15px 15px 40px rgba(0,0,0, 0.8);
+
+}
+
+/* THIS ONE NEEDS TO BE IN EVERY PAGE THAT NAVBAR NAVIGATES TO -  change to whatever the top level div is*/
+.main-content {
+    justify-self: flex-end;
+    margin-left: 10vw;
+    width: 90vw;
 }

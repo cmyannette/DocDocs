@@ -3,10 +3,14 @@ import './HomePage.css';
 
 function HomePage({ patient, meetings, onJoinMeeting }) {
   return (
-    <div className="main-content">
+    <div class="main-content">
       <section id="home">
-        <h2>Home</h2>
-        <p> Welcome to <b>DocDocs</b>, Your telehealth transcription assistant! </p>
+      <div class="hero-image">
+        <div class="hero-text" id="hero-text">
+            <h1 id="hero-text">Welcome to <b>DocDocs</b></h1>
+            <h3 id="hero-text">Your telehealth transcription assistant! </h3>
+        </div>
+      </div>
       </section>
       <section id="meetings">
         <h2>Meetings</h2>

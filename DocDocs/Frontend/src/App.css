@@ -108,27 +108,7 @@ a:hover {
   background-color: #da4242;
 }
 
-/* Main Content */
-.main-content {
-  margin-left: 220px;
-  padding: 40px;
-  width: calc(100% - 220px);
-  height: 100vh;
-  overflow-y: auto; /* Scroll if content exceeds the page */
-}
 
-.main-content section {
-  margin-bottom: 30px;
-}
-
-.main-content h2 {
-  margin-bottom: 10px;
-  text-decoration: underline;
-}
-
-.main-content p {
-  font-size: 18px;
-}
 
 /* Login Page */
 .login-page {
@@ -273,4 +253,15 @@ a:hover {
     margin-left: 110px;
     width: calc(100% - 110px);
   }
+}
+
+/* APP SPECIFIC CSS */
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+NavBar {
+  position: fixed;
+
 }
