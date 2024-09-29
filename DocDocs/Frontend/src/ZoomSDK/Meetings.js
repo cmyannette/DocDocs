@@ -8,6 +8,7 @@ const Meeting = ({ payload }) => {
             try {
                 const { ZoomMtg } = await import("@zoomus/websdk");
 
+                // Set the Zoom SDK libraries and prepare settings
                 ZoomMtg.setZoomJSLib('https://source.zoom.us/lib', 'av');
                 ZoomMtg.prepareWebSDK();
 
@@ -18,10 +19,13 @@ const Meeting = ({ payload }) => {
                         sdkKey: payload.sdkKey,
                         sdkSecret: payload.sdkSecret,
                         success: function (signature) {
+                            console.log('Signature generated:', signature.result);
                             if (isMounted) {
                                 ZoomMtg.init({
                                     leaveUrl: payload.leaveUrl,
+                                    isSupportAV: true, // Ensure audio/video support
                                     success: function () {
+                                        console.log('Zoom SDK initialized successfully');
                                         if (isMounted) {
                                             ZoomMtg.join({
                                                 meetingNumber: payload.meetingNumber,
@@ -30,24 +34,23 @@ const Meeting = ({ payload }) => {
                                                 userName: payload.userName,
                                                 userEmail: payload.userEmail,
                                                 passWord: payload.password,
-                                                tk: '',
                                                 success: function () {
-                                                    console.log('--Joined--');
+                                                    console.log('--Joined meeting successfully--');
                                                 },
                                                 error: function (error) {
-                                                    console.error("Join Error:", error.message || JSON.stringify(error));
+                                                    console.error("Error joining the meeting:", error.message || JSON.stringify(error));
                                                 }
                                             });
                                         }
                                     },
                                     error: function (error) {
-                                        console.error("Init Error:", error.message || JSON.stringify(error));
+                                        console.error("Error initializing Zoom SDK:", error.message || JSON.stringify(error));
                                     }
                                 });
                             }
                         },
                         error: function (error) {
-                            console.error("Signature Error:", error.message || JSON.stringify(error));
+                            console.error("Error generating SDK signature:", error.message || JSON.stringify(error));
                         }
                     });
                 }
@@ -65,6 +68,7 @@ const Meeting = ({ payload }) => {
 
     return (
         <Fragment>
+            {/* Including required Zoom Web SDK stylesheets */}
             <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.9.0/css/bootstrap.css" />
             <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.9.0/css/react-select.css" />
         </Fragment>
