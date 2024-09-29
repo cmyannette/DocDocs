@@ -19,7 +19,7 @@ public static class BackendMain {
             // Transcribe file from S3 Bucket
             //await AWS.TranscribeFileAsync(filePath, transcriptName);
             //string transcript = await AWS.GetTranscriptAsync(transcriptName);
-            //Parser parser = new Parser();
+            //JsonParser parser = new JsonParser();
             //await parser.ParseJsonToTextFileAsync(".\\test.json", ".\\output.txt");
 
             string response = await AWS.SummarizeNotes();

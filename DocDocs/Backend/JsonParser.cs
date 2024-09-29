@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
-class Parser
+class JsonParser
 {
     public async Task<string> ParseJsonToTextFileAsync(string jsonFilePath, string outputFilePath)
     {
