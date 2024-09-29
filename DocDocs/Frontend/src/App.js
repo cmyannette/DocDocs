@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from 'react';
 import './App.css';
 import Login from './components/Login/Login.js';
@@ -10,7 +11,7 @@ import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-rou
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [meetingInProgress, setMeetingInProgress] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false); // Default to false
 
   const patient = {
     name: 'John Doe',
@@ -35,33 +36,29 @@ function App() {
     setMeetingInProgress(false); // Reset the meeting state
   };
 
-  const handleIsAdmin = () => {
-    setIsAdmin(!isAdmin);
-  };
-
   return (
     <BrowserRouter>
       <div className="App">
         {!isLoggedIn ? (
-          <Login onLogin={handleLogin} />
+          <Login onLogin={handleLogin} setIsAdmin={setIsAdmin} />
         ) : (
           <>
             {meetingInProgress ? (
-                <MeetingPage 
-                  patient={patient} 
-                  meetings={meetings} 
-                  onJoinMeeting={handleJoinMeeting} 
-                  onEndMeeting={handleMeetingEnd} 
-                />
-              ) : (
-                <>
-                  <NavBar patient={patient} onLogout={handleLogout} />
-                  <Routes>
-                    <Route path="/" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
-                    <Route path="/notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
-                  </Routes>
-                </>
-              )}
+              <MeetingPage 
+                patient={patient} 
+                meetings={meetings} 
+                onJoinMeeting={handleJoinMeeting} 
+                onEndMeeting={handleMeetingEnd} 
+              />
+            ) : (
+              <>
+                <NavBar patient={patient} onLogout={handleLogout} />
+                <Routes>
+                  <Route path="/" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
+                  <Route path="/notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
+                </Routes>
+              </>
+            )}
           </>
         )}
       </div>

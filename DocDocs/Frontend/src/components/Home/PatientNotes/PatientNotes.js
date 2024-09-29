@@ -11,10 +11,13 @@ function PatientNotes() {
 
   return (
     <div className="patient-notes-section">
-      <h2>Patient's Notes</h2>
-      <ul>
+      <h2>Patient Notes</h2>
+      <ul class="card-container">
         {examplePatientNotes.map((note, index) => (
-          <li key={index}>{note}</li>
+          <li key={index} class="card">
+            <h3>{note}</h3>
+            <button><b>Go to Note</b></button>
+          </li>
         ))}
       </ul>
     </div>
