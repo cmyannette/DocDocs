@@ -3,7 +3,7 @@ import './App.css';
 import Login from './components/Login/Login.js';
 import NavBar from './components/Home/NavBar/NavBar.js';
 import HomePage from './components/Home/HomePage/HomePage.js';
-import MeetingPage from './components/Meeting/MeetingPage.js'; 
+// Removed the unused import for MeetingPage
 import Meeting from './ZoomSDK/Meetings.js';
 
 function App() {
@@ -29,11 +29,8 @@ function App() {
     setMeetingInProgress(true);
   };
 
-  const handleMeetingEnd = () => {
-    setMeetingInProgress(false); // Reset the meeting state
-  };
+  // Removed the handleMeetingEnd since it's not used
 
-  // Add your payload here or dynamically set it
   const payload = {
     meetingNumber: '123456789',
     role: 0,
