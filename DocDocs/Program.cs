@@ -81,7 +81,7 @@ static async Task TestParser(ILogger logger)
         }
 
         // Run the parsing method
-        await parser.ParseJsonToTextFileAsync(jsonFilePath, outputFilePath);
+        // await parser.ParseJsonToTextFileAsync(jsonFilePath, outputFilePath);
 
         // Confirm if the output file is created
         if (File.Exists(outputFilePath))
