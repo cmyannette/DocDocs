@@ -1,0 +1,192 @@
+/* General background and font settings */
+body {
+  background-color: #f5f5dc; /* Beige background */
+  color: #333333; /* Darker font for contrast */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333333; /* Darker headings */
+}
+
+a {
+  color: #ff6ec7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0080;
+}
+
+/* Sidebar with gradient */
+.sidebar {
+  width: 100px;
+  background: linear-gradient(135deg, #8a2be2, #ff6ec7);
+  color: white;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+}
+
+.sidebar ul li a:hover {
+  background-color: #da5fd2;
+}
+
+/* Fix Logout Button Position */
+.logout-btn {
+  background-color: #ff0080;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.logout-btn:hover {
+  background-color: #ff4f92;
+}
+
+/* Main content without a white background */
+.main-content {
+  margin: 0 auto;
+  padding: 50px;
+  width: 80%;
+  background: none; /* Removed any background colors to prevent white box */
+  border-radius: 15px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.welcome-message {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.no-meetings-message {
+  font-size: 18px;
+  color: #ff6ec7;
+}
+
+.join-meeting-btn {
+  background: linear-gradient(135deg, #ff0080, #ff6ec7);
+  color: #ffffff;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(255, 0, 128, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.join-meeting-btn:hover {
+  background: linear-gradient(135deg, #ff6ec7, #ff0080);
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 0, 128, 0.8);
+}
+
+/* Flexbox for the meetings section */
+#meetings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meeting-info {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.meeting-info.positive {
+  color: #28a745; /* Green if meetings exist */
+}
+
+.meeting-info.negative {
+  color: #dc3545; /* Red if no meetings */
+}
+
+.regular-text {
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .join-meeting-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .sidebar ul li a {
+    font-size: 12px;
+  }
+
+  .logout-btn {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .main-content {
+    width: 85%;
+    margin-left: 80px; /* Adjusted for smaller sidebar */
+  }
+}
