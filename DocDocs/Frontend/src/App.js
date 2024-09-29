@@ -3,7 +3,6 @@ import './App.css';
 import Login from './components/Login/Login.js';
 import NavBar from './components/Home/NavBar/NavBar.js';
 import HomePage from './components/Home/HomePage/HomePage.js';
-// Removed the unused import for MeetingPage
 import Meeting from './ZoomSDK/Meetings.js';
 
 function App() {
@@ -29,17 +28,16 @@ function App() {
     setMeetingInProgress(true);
   };
 
-  // Removed the handleMeetingEnd since it's not used
-
+  // Using environment variables for the payload
   const payload = {
-    meetingNumber: '123456789',
-    role: 0,
-    sdkKey: 'yourSdkKey',
-    sdkSecret: 'yourSdkSecret',
-    password: 'yourPassword',
-    userName: 'Testing',
-    userEmail: '',
-    leaveUrl: 'https://localhost:3000'
+    meetingNumber: process.env.REACT_APP_MEETING_NUMBER,
+    role: Number(process.env.REACT_APP_ROLE), // Convert role to number
+    sdkKey: process.env.REACT_APP_SDK_KEY,
+    sdkSecret: process.env.REACT_APP_SDK_SECRET,
+    password: process.env.REACT_APP_PASSWORD,
+    userName: process.env.REACT_APP_USER_NAME,
+    userEmail: process.env.REACT_APP_USER_EMAIL,
+    leaveUrl: process.env.REACT_APP_LEAVE_URL
   };
 
   return (
@@ -56,7 +54,7 @@ function App() {
               <HomePage 
                 patient={patient} 
                 meetings={meetings} 
-                onJoinMeeting={handleJoinMeeting} // Pass the handleJoinMeeting function
+                onJoinMeeting={handleJoinMeeting} 
               />
             </>
           )}
