@@ -7,11 +7,11 @@ namespace DocDocs.Backend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class Pcontroller : ControllerBase
+    public class Controller : ControllerBase
     {
         private readonly HttpClient _httpClient;
 
-        public Pcontroller()
+        public Controller()
         {
             _httpClient = new HttpClient();
         }
