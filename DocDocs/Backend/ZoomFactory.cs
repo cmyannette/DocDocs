@@ -7,11 +7,44 @@ public class ZoomFactory
 {
     public class TokenResponse
     {
-        public string accessToken { get; set; }
+        public string access_token { get; set; }
 
     }
 
-    // Method to get Zoom API access token using Server-to-Server OAuth
+     public class RecordingResponse
+    {
+        public List<RecordingFile> recording_files { get; set; }
+    }
+
+    public class RecordingFile
+    {
+        public string file_type { get; set; }
+        public string download_url { get; set; }
+        public string recording_type { get; set; }
+    }
+
+    public async Task RetrieveAudioRecording(string meetingId)
+    {
+        try
+        {
+            var accessToken = await GetAccessToken();
+            var recordings = await GetMeetingRecordings(meetingId);
+            var audioRecording = recordings.recording_files
+                .FirstOrDefault(r => r.recording_type == "audio_only" && r.file_type == "WAV");
+
+            if (audioRecording == null)
+            {
+                throw new Exception("Audio recording not found.");
+            }
+
+            var audioData = await DownloadRecordingFile(audioRecording.download_url, accessToken);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+    }
+
     private async Task<string> GetAccessToken()
     {
         Env.Load();
@@ -40,7 +73,7 @@ public class ZoomFactory
             if (response.IsSuccessStatusCode)
             {
                 var tokenResponse = JsonConvert.DeserializeObject<TokenResponse>(content);
-                return tokenResponse.accessToken;
+                return tokenResponse.access_token;
             }
             else
             {
@@ -49,4 +82,49 @@ public class ZoomFactory
         }
     }
 
+    private async Task<RecordingResponse> GetMeetingRecordings(string meetingId)
+    {
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Env.GetString("ZOOM_JWT_TOKEN"));
+
+            var url = $"https://api.zoom.us/v2/meetings/{meetingId}/recordings";
+
+            Console.WriteLine($"Requesting recordings for meeting ID: {meetingId}");
+
+            var response = await client.GetAsync(url);
+            var content = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var recordingResponse = JsonConvert.DeserializeObject<RecordingResponse>(content);
+                return recordingResponse;
+            }
+            else
+            {
+                throw new Exception($"Failed to get meeting recordings: {response.StatusCode} {response.ReasonPhrase}. Response content: {content}");
+            }
+        }
+    }
+
+    private async Task<byte[]> DownloadRecordingFile(string downloadUrl, string accessToken)
+    {
+        using (var client = new HttpClient())
+        {
+            // Append access_token as query parameter
+            var url = $"{downloadUrl}?access_token={accessToken}";
+
+            var response = await client.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var data = await response.Content.ReadAsByteArrayAsync();
+                return data;
+            }
+            else
+            {
+                throw new Exception($"Failed to download recording file: {response.StatusCode} {response.ReasonPhrase}");
+            }
+        }
+    }
 }
