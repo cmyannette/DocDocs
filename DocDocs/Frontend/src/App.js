@@ -7,6 +7,7 @@ import HomePage from './components/Home/HomePage/HomePage.js';
 import MeetingPage from './components/Meeting/MeetingPage.js';
 import Notes from './components/Home/Notes/Notes.js';
 import ViewNote from './components/Home/ViewNote/ViewNote.js'; // Import ViewNote
+import EditNotes from './components/Home/EditNotes/EditNotes.js'; // Import EditNotes
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
                   <Route path="/" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
                   <Route path="/notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
                   <Route path="/view-note/:noteId" element={<ViewNote />} /> {/* New route for ViewNote */}
+                  <Route path="/edit-notes" element={<EditNotes />} /> {/* Route for EditNotes */}
                 </Routes>
               </>
             )}

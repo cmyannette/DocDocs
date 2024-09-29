@@ -1,0 +1,7 @@
+.edit-notes-section {
+    width: 90vw;
+    margin-left: 10vw;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
