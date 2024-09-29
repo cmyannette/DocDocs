@@ -32,15 +32,16 @@ function App() {
   // Removed the handleMeetingEnd since it's not used
 
   const payload = {
-    meetingNumber: '5773745739',
-    role: 0,
-    sdkKey: 'qI7xXbDvNi15ZQjfe1tk7G5Slv9MhML7qan6',
-    sdkSecret: 'tFkOqBdn82ELTNW6enSDeq83gnHhqnKV1BPa',
-    password: 'v#Agi9ilDVTB4#aQZMn6ga2ib#g8#&',
-    userName: 'GAWKTUAH',
-    userEmail: 'hackmidwest24@nugwin.net',
-    leaveUrl: 'https://localhost:3000'
+    meetingNumber: process.env.REACT_APP_MEETING_NUMBER,
+    role: Number(process.env.REACT_APP_ROLE),
+    sdkKey: process.env.REACT_APP_SDK_KEY,
+    sdkSecret: process.env.REACT_APP_SDK_SECRET,
+    password: process.env.REACT_APP_PASSWORD,
+    userName: process.env.REACT_APP_USER_NAME,
+    userEmail: process.env.REACT_APP_USER_EMAIL,
+    leaveUrl: process.env.REACT_APP_LEAVE_URL
   };
+  
 
   return (
     <div className="App">
