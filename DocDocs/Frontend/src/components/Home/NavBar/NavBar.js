@@ -13,7 +13,6 @@ function NavBar({ patient, onLogout }) {
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/notes">Notes</Link></li>
-        <li><Link to="/calender">Calendar</Link></li> {/* New Calendar Button */}
       </ul>
       <button className="logout-btn" onClick={onLogout}>Logout</button>
     </div>

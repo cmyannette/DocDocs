@@ -1,6 +1,5 @@
-/* Sidebar with gradient */
+/* Sidebar styles */
 .sidebar {
-  justify-self: flex-start;
   width: 10vw;
   background: linear-gradient(135deg, #8a2be2, #83B5D1);
   color: white;
@@ -10,19 +9,18 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align items at the top */
+  justify-content: space-between;
   align-items: center;
   padding: 20px 0;
   box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Profile section at the top */
-.sidebar .profile {
+/* Profile section */
+.profile {
   text-align: center;
-  margin-bottom: 20px; /* Add space between profile and buttons */
 }
 
-.sidebar .profile img {
+.profile img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -30,24 +28,21 @@
   margin-bottom: 10px;
 }
 
-.sidebar .profile .username {
+.profile .username {
   color: white;
   font-weight: bold;
-  margin-bottom: 10px; /* Space between name and buttons */
-  font-size: 24px; /* Increase font size for the name */
+  margin-bottom: 20px;
 }
 
-/* Sidebar buttons (links) right under the patient's name */
+/* Sidebar links */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
-  margin-top: 10px; /* Add space after profile name */
-  width: 100%; /* Full width for buttons */
-  text-align: center; /* Center the buttons */
+  margin: 0;
 }
 
 .sidebar ul li {
-  margin-bottom: 15px; /* Space between buttons */
+  margin-bottom: 15px;
 }
 
 .sidebar ul li a {
@@ -63,7 +58,7 @@
   background-color: #1768AC;
 }
 
-/* Fix Logout Button Position at the Bottom */
+/* Logout Button */
 .logout-btn {
   background-color: #03256C;
   color: white;
@@ -73,8 +68,7 @@
   text-align: center;
   font-size: 14px;
   cursor: pointer;
-  margin-top: auto; /* Push the logout button to the bottom */
-  margin-bottom: 5vh; /* Add some spacing from the bottom */
+  margin: 5vh;
 }
 
 .logout-btn:hover {
