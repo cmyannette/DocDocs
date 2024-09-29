@@ -1,15 +1,17 @@
+// MeetingPage.js
 import React, { useState } from 'react';
 import './MeetingPage.css'; // Import the CSS for MeetingPage
+import { useNavigate } from 'react-router-dom';
 
 const MeetingPage = ({ patient, meetings, onEndMeeting }) => {
-  const [meetingInProgress, setMeetingInProgress] = useState(true);
-
+  const navigate = useNavigate();
+  
   const handleMeetingEnd = () => {
     const wantsNotes = window.confirm("Do you want meeting notes?");
     if (wantsNotes) {
-      alert("Showing meeting notes...");
+      // Navigate to EditNotes instead of showing an alert
+      navigate('/edit-notes');
     }
-    setMeetingInProgress(false); // Reset the meeting state
     onEndMeeting(); // Call the parent function to handle ending the meeting
   };
 
