@@ -43,7 +43,7 @@ function App() {
   };
 
   return (
-    <GoogleOAuthProvider clientId="503647929552-8il80pvq28gplp95dn9796538odkqmaa.apps.googleusercontent.com"> {/* Add your Google Client ID here */}
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}> {/* Add your Google Client ID here */}
       <Router>
         <div className="App">
           {!isLoggedIn ? (
