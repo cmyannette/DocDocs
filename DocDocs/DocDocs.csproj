@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AWSSDK.Bedrock" Version="3.7.406.3" />
+    <PackageReference Include="AWSSDK.BedrockRuntime" Version="3.7.403.14" />
     <PackageReference Include="AWSSDK.S3" Version="3.7.403.5" />
     <PackageReference Include="AWSSDK.TranscribeService" Version="3.7.400.26" />
     <PackageReference Include="DotNetEnv" Version="3.1.1" />

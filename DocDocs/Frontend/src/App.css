@@ -35,11 +35,8 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 10px;
-}
+  z-index: 10; /* Ensure it stays above the main content */
 
-.sidebar h2 {
-  margin-bottom: 20px;
-  font-size: 18px;
   text-align: left;
   background-color: #8a2be2;
   color: #ffffff;
@@ -101,11 +98,54 @@ a:hover {
   border-radius: 5px;
   text-align: center;
   transition: background-color 0.3s ease;
-  width: 100%;
 }
 
 .logout-btn:hover {
   background-color: #da4242;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 90px; /* Align main content beside the sidebar */
+  padding: 20px;
+  width: calc(100% - 90px); /* Adjust width so it doesn't overlap sidebar */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Ensure no horizontal scrolling */
+}
+
+/* Login Page */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9ff;
+}
+
+/* Glassmorphism Login Form */
+.glass-form {
+  height: auto; /* Adjust height to fit content */
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 50px 35px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+.glass-form h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  color: #000000; /* Black text */
 }
 
 

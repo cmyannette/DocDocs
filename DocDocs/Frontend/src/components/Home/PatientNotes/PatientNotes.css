@@ -1,0 +1,93 @@
+/* Section for Patient Notes */
+.patient-notes-section {
+    margin-left: 0; /* Align with the sidebar */
+    margin-right: 10vw; /* Optional: margin on the right */
+    width: calc(100vw - 10vw); /* Adjust the width to fit the sidebar */
+    padding: 50px;
+    background: none; /* No background */
+    border-radius: 15px;
+    height: 100%;
+    overflow-y: auto;
+    position: relative; /* For the doctor's name positioning */
+}
+
+/* Title Styling */
+.patient-notes-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #8a2be2; /* Darker text color */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Card Container */
+.card-container {
+    display: flex; /* Use flex for layout */
+    flex-direction: column; /* Arrange cards in a column */
+    align-items: center; /* Center cards horizontally */
+    margin-top: 20px;
+}
+
+/* Individual Card Styling */
+.card {
+    width: 70%; /* Set card width to 70% of the screen */
+    background-color: #f5f5dc; /* Light beige background to match other elements */
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    text-align: center;
+    position: relative; /* Positioning for date placement */
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: scale(1.05); /* Slight scaling on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+}
+
+/* Card Text Styling */
+.card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333; /* Darker text color */
+    margin-bottom: 20px;
+}
+
+/* Date Styling */
+.card .date {
+    position: absolute; /* Absolute positioning for bottom right */
+    bottom: 10px; /* Distance from the bottom */
+    right: 10px; /* Distance from the right */
+    font-size: 14px; /* Smaller font size */
+    color: #666666; /* Lighter color for the date */
+}
+
+/* Button Styling */
+.card button {
+    background: linear-gradient(135deg, #8a2be2, #83B5D1); /* Gradient button */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Button Hover Effect */
+.card button:hover {
+    background: linear-gradient(135deg, #8a2be2, #5a89c3); /* Darker gradient on hover */
+    transform: scale(1.05);
+}
+
+/* Doctor's Name Styling */
+.doctor-name {
+    position: absolute;
+    bottom: 10px; /* Stick to the bottom */
+    left: 10px; /* Align to the left */
+    font-size: 18px;
+    color: #8a2be2; /* Purple color */
+    font-weight: bold;
+}
