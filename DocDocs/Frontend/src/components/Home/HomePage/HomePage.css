@@ -1,3 +1,7 @@
+
+
+
+
 /* General background and font settings */
 body {
   background-color: #f5f5dc; /* Beige background */
@@ -50,7 +54,7 @@ body {
 }
 
 .welcome-message {
-  font-size: 48px; /* Increase the size of the welcome message */
+  font-size: 20px;
   color: #333333;
   margin-bottom: 30px;
 }
@@ -74,7 +78,7 @@ body {
   border-radius: 50px;
   font-size: 18px;
   font-weight: bold;
-  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+  box-shadow: 0 8px 20px rgba(138,43,226, 0.6);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -82,7 +86,7 @@ body {
 .join-meeting-btn:hover {
   background: linear-gradient(135deg, #8a2be2, #83B5D1);
   transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(138, 43, 226, 0.8);
+  box-shadow: 0 12px 30px rgba(138,43,226, 0.8);
 }
 
 /* Flexbox for the meetings section */
@@ -169,6 +173,7 @@ body {
   }
 }
 
+
 /* The hero image */
 .hero-image {
   display: flex;
@@ -219,3 +224,4 @@ h3#hero-text {
     margin-left: 10vw;
     width: 90vw;
 }
+

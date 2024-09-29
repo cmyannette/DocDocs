@@ -6,8 +6,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  overflow-y: auto; /* Allow vertical scroll if needed */
+  overflow: hidden; /* Prevent scroll */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,11 +36,7 @@ a:hover {
   justify-content: space-between;
   padding: 20px 10px;
   z-index: 10; /* Ensure it stays above the main content */
-}
 
-.sidebar h2 {
-  margin-bottom: 20px;
-  font-size: 18px;
   text-align: left;
   background-color: #8a2be2;
   color: #ffffff;
@@ -153,6 +148,43 @@ a:hover {
   color: #000000; /* Black text */
 }
 
+
+
+/* Login Page */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9ff;
+}
+
+/* Glassmorphism Login Form */
+.glass-form {
+  height: auto; /* Adjust height to fit content */
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 50px 35px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+.glass-form h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  color: #000000; /* Black text */
+}
+
 .glass-form label {
   width: 100%;
   margin-top: 30px;
@@ -219,15 +251,21 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.47);
 }
 
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .sidebar {
     width: 150px;
   }
-
+  
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  
   .main-content {
-    margin-left: 150px;
-    width: calc(100% - 150px);
+    margin-left: 170px;
+    width: calc(100% - 170px);
   }
   
   .btn {
@@ -243,16 +281,17 @@ a:hover {
   .btn:hover {
     background-color: #6a0dad;
   }
+  
 }
 
 @media (max-width: 576px) {
   .sidebar {
     width: 100px;
   }
-
+  
   .main-content {
-    margin-left: 100px;
-    width: calc(100% - 100px);
+    margin-left: 110px;
+    width: calc(100% - 110px);
   }
 }
 
@@ -264,4 +303,5 @@ a:hover {
 
 NavBar {
   position: fixed;
+
 }
