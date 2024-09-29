@@ -57,7 +57,7 @@ function App() {
                 <>
                   <NavBar patient={patient} onLogout={handleLogout} />
                   <Routes>
-                    <Route path="/home-page" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
+                    <Route path="/" element={<HomePage patient={patient} meetings={meetings} onJoinMeeting={handleJoinMeeting} />} />
                     <Route path="/notes" element={<Notes isAdmin={isAdmin} />} /> {/* Notes route */}
                   </Routes>
                 </>
