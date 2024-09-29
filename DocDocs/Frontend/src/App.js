@@ -31,7 +31,7 @@ function App() {
   // Using environment variables for the payload
   const payload = {
     meetingNumber: process.env.REACT_APP_MEETING_NUMBER,
-    role: Number(process.env.REACT_APP_ROLE), // Convert role to number
+    role: Number(process.env.REACT_APP_ROLE),
     sdkKey: process.env.REACT_APP_SDK_KEY,
     sdkSecret: process.env.REACT_APP_SDK_SECRET,
     password: process.env.REACT_APP_PASSWORD,
@@ -39,6 +39,7 @@ function App() {
     userEmail: process.env.REACT_APP_USER_EMAIL,
     leaveUrl: process.env.REACT_APP_LEAVE_URL
   };
+  
 
   return (
     <div className="App">
