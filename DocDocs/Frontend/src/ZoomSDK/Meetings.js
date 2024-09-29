@@ -32,34 +32,48 @@ const Meeting = ({ payload }) => {
                                                 passWord: payload.password,
                                                 tk: '',
                                                 success: function () {
-                                                    console.log('--Joined--');
+                                                    if (isMounted) {
+                                                        console.log('--Joined--');
+                                                    }
                                                 },
                                                 error: function (error) {
-                                                    console.error("Join Error:", error.message || JSON.stringify(error));
+                                                    if (isMounted) {
+                                                        console.error("Join Error:", error.message || JSON.stringify(error));
+                                                        alert("Join Error: " + (error.message || JSON.stringify(error)));
+                                                    }
                                                 }
                                             });
                                         }
                                     },
                                     error: function (error) {
-                                        console.error("Init Error:", error.message || JSON.stringify(error));
+                                        if (isMounted) {
+                                            console.error("Init Error:", error.message || JSON.stringify(error));
+                                            alert("Init Error: " + (error.message || JSON.stringify(error)));
+                                        }
                                     }
                                 });
                             }
                         },
                         error: function (error) {
-                            console.error("Signature Error:", error.message || JSON.stringify(error));
+                            if (isMounted) {
+                                console.error("Signature Error:", error.message || JSON.stringify(error));
+                                alert("Signature Error: " + (error.message || JSON.stringify(error)));
+                            }
                         }
                     });
                 }
             } catch (error) {
-                console.error("Error initializing Zoom SDK:", error.message || JSON.stringify(error));
+                if (isMounted) {
+                    console.error("Error initializing Zoom SDK:", error.message || JSON.stringify(error));
+                    alert("Error initializing Zoom SDK: " + (error.message || JSON.stringify(error)));
+                }
             }
         };
 
         initializeZoom();
 
         return () => {
-            isMounted = false;
+            isMounted = false; // Cleanup function to mark component as unmounted
         };
     }, [payload]);
 
