@@ -1,7 +1,7 @@
 // EditNotes.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './EditNotes.css'; // You can style this component as needed
+import './EditNotes.css'; // Import the CSS for styling
 
 const EditNotes = () => {
   const navigate = useNavigate();
@@ -23,11 +23,11 @@ const EditNotes = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Meeting Notes:</label>
+          <br></br>
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            rows={10}
-            cols={50}
+            rows={10} // Keep rows as needed
           />
         </div>
         <button type="submit">Submit Changes</button>
