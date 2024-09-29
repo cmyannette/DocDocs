@@ -29,7 +29,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors("AllowReactApp");
-app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();
+
+app.UseRouting();
+app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();  // Ensure this maps to your API controllers
+});
