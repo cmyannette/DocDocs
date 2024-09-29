@@ -88,7 +88,7 @@ a:hover {
 }
 
 .sidebar ul li a:hover {
-  background-color: #7b26c6;
+  background-color: #f5f5dc;
   border-radius: 5px;
 }
 
@@ -195,7 +195,7 @@ a:hover {
   margin-top: 30px; /* Adjusted for spacing */
   width: 100%; /* Full width */
   max-width: 300px; /* Max width for centering */
-  background-color: #007BFF; /* Blue background */
+  background-color: #8a2be2; /* Blue background */
   color: #ffffff; /* White text */
   padding: 15px 0;
   font-size: 18px;
